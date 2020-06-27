@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>54090491120-qi19uprg80st4f3ta9bue6k9rbv1ehlb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.54090491120-qi19uprg80st4f3ta9bue6k9rbv1ehlb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAr4ICmhFmpInt_k05ybRVysWquqCNbOYc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>54090491120</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ewin.Get-Fit</string>
+	<key>PROJECT_ID</key>
+	<string>get-fit-ab913</string>
+	<key>STORAGE_BUCKET</key>
+	<string>get-fit-ab913.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:54090491120:ios:4395a4397ca3c6e4ef8e35</string>
+	<key>DATABASE_URL</key>
+	<string>https://get-fit-ab913.firebaseio.com</string>
+</dict>
+</plist>
