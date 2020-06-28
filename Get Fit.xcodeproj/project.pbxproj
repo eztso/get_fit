@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		F17B307924A7E9DC0043F9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17B307824A7E9DC0043F9AE /* Assets.xcassets */; };
 		F17B307C24A7E9DC0043F9AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17B307A24A7E9DC0043F9AE /* LaunchScreen.storyboard */; };
 		F1AD3C2524A7FBDE00AF313E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1AD3C2424A7FBDE00AF313E /* GoogleService-Info.plist */; };
+		F1AD3C2724A823DD00AF313E /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD3C2624A823DC00AF313E /* home_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F17B307B24A7E9DC0043F9AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F17B307D24A7E9DC0043F9AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1AD3C2424A7FBDE00AF313E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F1AD3C2624A823DC00AF313E /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,6 @@
 				B9EB4E5F77223C3B8595D41E /* Pods-Get Fit.debug.xcconfig */,
 				B45263F77838324A345251BF /* Pods-Get Fit.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -90,6 +91,7 @@
 				F1AD3C2424A7FBDE00AF313E /* GoogleService-Info.plist */,
 				F17B307024A7E9D80043F9AE /* ViewController.swift */,
 				F17B307224A7E9D80043F9AE /* Main.storyboard */,
+				F1AD3C2624A823DC00AF313E /* home_icon.png */,
 				F17B307824A7E9DC0043F9AE /* Assets.xcassets */,
 				F17B307A24A7E9DC0043F9AE /* LaunchScreen.storyboard */,
 				F17B307D24A7E9DC0043F9AE /* Info.plist */,
@@ -161,6 +163,7 @@
 				F17B307C24A7E9DC0043F9AE /* LaunchScreen.storyboard in Resources */,
 				F1AD3C2524A7FBDE00AF313E /* GoogleService-Info.plist in Resources */,
 				F17B307924A7E9DC0043F9AE /* Assets.xcassets in Resources */,
+				F1AD3C2724A823DD00AF313E /* home_icon.png in Resources */,
 				F17B307424A7E9D80043F9AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
