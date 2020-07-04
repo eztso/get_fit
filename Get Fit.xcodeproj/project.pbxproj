@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		16CF8DF4B24D485A124AC9CE /* Pods_Get_Fit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF496DD02BF99AEC9B8452F /* Pods_Get_Fit.framework */; };
+		F1659E4E24B132F200E4C2A5 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1659E4D24B132F200E4C2A5 /* HealthData.swift */; };
+		F1659E5124B1468800E4C2A5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1659E5024B1468800E4C2A5 /* HealthKit.framework */; };
 		F17B306D24A7E9D80043F9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B306C24A7E9D80043F9AE /* AppDelegate.swift */; };
 		F17B306F24A7E9D80043F9AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B306E24A7E9D80043F9AE /* SceneDelegate.swift */; };
 		F17B307124A7E9D80043F9AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B307024A7E9D80043F9AE /* ViewController.swift */; };
@@ -23,6 +25,9 @@
 		8CF496DD02BF99AEC9B8452F /* Pods_Get_Fit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Get_Fit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45263F77838324A345251BF /* Pods-Get Fit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Fit.release.xcconfig"; path = "Target Support Files/Pods-Get Fit/Pods-Get Fit.release.xcconfig"; sourceTree = "<group>"; };
 		B9EB4E5F77223C3B8595D41E /* Pods-Get Fit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Fit.debug.xcconfig"; path = "Target Support Files/Pods-Get Fit/Pods-Get Fit.debug.xcconfig"; sourceTree = "<group>"; };
+		F1659E4D24B132F200E4C2A5 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
+		F1659E4F24B1468700E4C2A5 /* Get Fit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Get Fit.entitlements"; sourceTree = "<group>"; };
+		F1659E5024B1468800E4C2A5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		F17B306924A7E9D80043F9AE /* Get Fit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get Fit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17B306C24A7E9D80043F9AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F17B306E24A7E9D80043F9AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16CF8DF4B24D485A124AC9CE /* Pods_Get_Fit.framework in Frameworks */,
+				F1659E5124B1468800E4C2A5 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +66,7 @@
 		DECBB4198D11289F4774B9C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1659E5024B1468800E4C2A5 /* HealthKit.framework */,
 				8CF496DD02BF99AEC9B8452F /* Pods_Get_Fit.framework */,
 			);
 			name = Frameworks;
@@ -86,6 +93,7 @@
 		F17B306B24A7E9D80043F9AE /* Get Fit */ = {
 			isa = PBXGroup;
 			children = (
+				F1659E4F24B1468700E4C2A5 /* Get Fit.entitlements */,
 				F17B306C24A7E9D80043F9AE /* AppDelegate.swift */,
 				F17B306E24A7E9D80043F9AE /* SceneDelegate.swift */,
 				F1AD3C2424A7FBDE00AF313E /* GoogleService-Info.plist */,
@@ -96,6 +104,7 @@
 				F17B307A24A7E9DC0043F9AE /* LaunchScreen.storyboard */,
 				F17B307D24A7E9DC0043F9AE /* Info.plist */,
 				F17B307524A7E9D80043F9AE /* Get_Fit.xcdatamodeld */,
+				F1659E4D24B132F200E4C2A5 /* HealthData.swift */,
 			);
 			path = "Get Fit";
 			sourceTree = "<group>";
@@ -218,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17B307124A7E9D80043F9AE /* ViewController.swift in Sources */,
+				F1659E4E24B132F200E4C2A5 /* HealthData.swift in Sources */,
 				F17B306D24A7E9D80043F9AE /* AppDelegate.swift in Sources */,
 				F17B307724A7E9D80043F9AE /* Get_Fit.xcdatamodeld in Sources */,
 				F17B306F24A7E9D80043F9AE /* SceneDelegate.swift in Sources */,
@@ -365,7 +375,9 @@
 			baseConfigurationReference = B9EB4E5F77223C3B8595D41E /* Pods-Get Fit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Get Fit/Get Fit.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VPPJL6QB4C;
 				INFOPLIST_FILE = "Get Fit/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -384,7 +396,9 @@
 			baseConfigurationReference = B45263F77838324A345251BF /* Pods-Get Fit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Get Fit/Get Fit.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VPPJL6QB4C;
 				INFOPLIST_FILE = "Get Fit/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (

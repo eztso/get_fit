@@ -10,17 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var stepsLabel: UILabel!
     @IBOutlet weak var cardView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         cardView.roundCorners(cornerRadius: 10.0)
+        stepsLabel.text! = String(Constant.healthdata.stepsTaken)
+        
+        
     }
 
 
 }
 extension UIView {
     func roundCorners(cornerRadius: Double) {
+        
         self.layer.cornerRadius = CGFloat(cornerRadius)
 //        self.layer.shadowColor = UIColor.darkGray.cgColor
 //        self.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
