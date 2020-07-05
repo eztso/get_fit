@@ -8,15 +8,58 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Updater {
+    func updateFoodSugar(sugar: Double) {
+        Constant.healthdata.foodSugar = sugar
+    }
+    
+    func updateFoodProtein(protein: Double) {
+        Constant.healthdata.foodProtein = protein
+    }
+    
+    func updateFoodFat(fat: Double) {
+        Constant.healthdata.foodFat = fat
 
+    }
+    
+    func updateFoodCalories(calories: Double) {
+        Constant.healthdata.foodCalories = calories
+
+        <#code#>
+    }
+    
+    var weight : Double?
+    @IBOutlet weak var weightButton: UIButton!
+    @IBOutlet weak var foodButton: UIButton!
+    @IBOutlet weak var activityButton: UIButton!
     @IBOutlet weak var stepsLabel: UILabel!
     @IBOutlet weak var cardView: UIView!
+    @IBAction func onWeightButtonPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: "Change Weight", message: "", preferredStyle: UIAlertController.Style.alert)
+
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+            self.weight = Double(alertController.textFields?[0].text ?? "0")
+            self.weightButton.setTitle(String(self.weight!) + " lbs", for: .normal)
+
+
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
+            (action : UIAlertAction!) -> Void in })
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Weight"
+        }
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         cardView.roundCorners(cornerRadius: 10.0)
         Constant.healthdata.getTodaysSteps(completion: {(ans) -> Void in
+            print(ans)
             DispatchQueue.main.async { () in
                 self.stepsLabel.text! = String(Int(ans))    
             }

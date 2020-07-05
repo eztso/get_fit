@@ -21,28 +21,33 @@ struct Constant{
 }
 class HealthData {
     var healthStore: HKHealthStore
+    var caloriesBurned: Double
+    var foodCalories: Double
+    var foodProtein: Double
+    var foodFat: Double
+    var foodSugar:Double
+    var stepsTaken: Double
     let permissions = Set([HKObjectType.workoutType(),
     HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
     HKObjectType.quantityType(forIdentifier: .stepCount)!,
     HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
     HKObjectType.quantityType(forIdentifier: .heartRate)!])
-    var stepsTaken : Double = 0.0
+    
+    
 
     init() {
             // Add code to use HealthKit here.
-        print("hi1")
             healthStore = HKHealthStore()
        healthStore.requestAuthorization(toShare: permissions, read: permissions) { (success, error) in
             if success {
-                print("hi")
                 self.getTodaysSteps(completion: self.setTodaysSteps)
 
             }
         }
-        print("hi" + String(stepsTaken))
+
     }
     func setTodaysSteps(steps: Double) {
-        print("steps" + String(steps))
+
         self.stepsTaken = steps
     }
 
