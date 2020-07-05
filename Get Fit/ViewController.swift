@@ -16,9 +16,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         cardView.roundCorners(cornerRadius: 10.0)
-        stepsLabel.text! = String(Constant.healthdata.stepsTaken)
+        Constant.healthdata.getTodaysSteps(completion: {(ans) -> Void in
+            DispatchQueue.main.async { () in
+                self.stepsLabel.text! = String(Int(ans))    
+            }
+
+        })
+            
         
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Constant.healthdata.getTodaysSteps(completion: {(ans) -> Void in
+                 DispatchQueue.main.async { () in
+                     self.stepsLabel.text! = String(Int(ans))
+                 }
+
+             })
     }
 
 
