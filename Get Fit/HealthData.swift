@@ -21,12 +21,12 @@ struct Constant{
 }
 class HealthData {
     var healthStore: HKHealthStore
-    var caloriesBurned: Double
-    var foodCalories: Double
-    var foodProtein: Double
-    var foodFat: Double
-    var foodSugar:Double
-    var stepsTaken: Double
+    var caloriesBurned: Double?
+    var foodCalories: Double?
+    var foodProtein: Double?
+    var foodFat: Double?
+    var foodSugar:Double?
+    var stepsTaken: Double?
     let permissions = Set([HKObjectType.workoutType(),
     HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
     HKObjectType.quantityType(forIdentifier: .stepCount)!,
