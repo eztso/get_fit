@@ -24,8 +24,6 @@ class ViewController: UIViewController, Updater {
     
     func updateFoodCalories(calories: Double) {
         Constant.healthdata.foodCalories = calories
-
-        <#code#>
     }
     
     var weight : Double?
