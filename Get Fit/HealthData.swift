@@ -18,6 +18,8 @@ import Foundation
 
 struct Constant{
     static var healthdata = HealthData()
+    let recCalories = 2500
+    
 }
 class HealthData {
     var healthStore: HKHealthStore
@@ -27,6 +29,7 @@ class HealthData {
     var foodFat: Double?
     var foodSugar:Double?
     var stepsTaken: Double?
+    
     let permissions = Set([HKObjectType.workoutType(),
     HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
     HKObjectType.quantityType(forIdentifier: .stepCount)!,

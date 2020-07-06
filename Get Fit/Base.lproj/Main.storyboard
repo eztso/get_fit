@@ -36,7 +36,7 @@
                                     <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Lny-cw-ckg" kind="show" id="M3f-wJ-tq4"/>
+                                    <segue destination="Lny-cw-ckg" kind="show" identifier="FoodSegue" id="M3f-wJ-tq4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCF-Zz-fFz">
@@ -134,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="1048" y="825"/>
         </scene>
-        <!--View Controller-->
+        <!--FoodVC-->
         <scene sceneID="BN8-3K-H62">
             <objects>
-                <viewController id="Lny-cw-ckg" sceneMemberID="viewController">
+                <viewController id="Lny-cw-ckg" customClass="FoodVC" customModule="Get_Fit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L2h-t0-LZU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,6 +150,9 @@
                                 <state key="normal" title="Sugar Intake (g)">
                                     <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSugarPressed:" destination="Lny-cw-ckg" eventType="touchUpInside" id="qbW-0G-d8k"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quD-GL-HRo">
                                 <rect key="frame" x="20" y="430" width="374" height="82"/>
@@ -159,6 +162,9 @@
                                 <state key="normal" title="Protein Intake (g)">
                                     <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onProteinPressed:" destination="Lny-cw-ckg" eventType="touchUpInside" id="RJq-Fh-Sk7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeO-Sa-ewO">
                                 <rect key="frame" x="20" y="151" width="374" height="82"/>
@@ -168,6 +174,9 @@
                                 <state key="normal" title="Total Calories">
                                     <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCaloriesPressed:" destination="Lny-cw-ckg" eventType="touchUpInside" id="dM7-UA-MpL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDi-zd-5ly">
                                 <rect key="frame" x="20" y="561" width="374" height="82"/>
@@ -177,12 +186,21 @@
                                 <state key="normal" title="Fat Intake (g)">
                                     <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onFatPressed:" destination="Lny-cw-ckg" eventType="touchUpInside" id="RXS-3I-wfk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Wgf-B2-BfC"/>
                     </view>
                     <navigationItem key="navigationItem" id="HYF-7W-wXz"/>
+                    <connections>
+                        <outlet property="calorieOutlet" destination="ZeO-Sa-ewO" id="7Mo-pB-E8A"/>
+                        <outlet property="fatOutlet" destination="sDi-zd-5ly" id="JxC-h8-MAd"/>
+                        <outlet property="proteinOutlet" destination="quD-GL-HRo" id="8zU-a9-Y2X"/>
+                        <outlet property="sugarOutlet" destination="akV-Ju-JGl" id="1Zz-zn-QGE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiA-nB-Q2U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

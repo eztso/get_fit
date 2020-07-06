@@ -25,7 +25,7 @@ class ViewController: UIViewController, Updater {
     func updateFoodCalories(calories: Double) {
         Constant.healthdata.foodCalories = calories
     }
-    
+    let segueID = "FoodSegue"
     var weight : Double?
     @IBOutlet weak var weightButton: UIButton!
     @IBOutlet weak var foodButton: UIButton!
@@ -75,6 +75,17 @@ class ViewController: UIViewController, Updater {
                  }
 
              })
+    }
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == segueID,
+            let dest = segue.destination as? FoodVC {
+            dest.delegate = self
+        }
     }
 
 
