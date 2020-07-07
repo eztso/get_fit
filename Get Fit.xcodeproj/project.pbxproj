@@ -12,6 +12,7 @@
 		F1659E5124B1468800E4C2A5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1659E5024B1468800E4C2A5 /* HealthKit.framework */; };
 		F1659E5324B1A1EE00E4C2A5 /* FoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1659E5224B1A1EE00E4C2A5 /* FoodVC.swift */; };
 		F1659E5524B1A22D00E4C2A5 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1659E5424B1A22D00E4C2A5 /* Updater.swift */; };
+		F1659E5724B2DF0F00E4C2A5 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1659E5624B2DF0F00E4C2A5 /* ActivityVC.swift */; };
 		F17B306D24A7E9D80043F9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B306C24A7E9D80043F9AE /* AppDelegate.swift */; };
 		F17B306F24A7E9D80043F9AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B306E24A7E9D80043F9AE /* SceneDelegate.swift */; };
 		F17B307124A7E9D80043F9AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B307024A7E9D80043F9AE /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		F1659E5024B1468800E4C2A5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		F1659E5224B1A1EE00E4C2A5 /* FoodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodVC.swift; sourceTree = "<group>"; };
 		F1659E5424B1A22D00E4C2A5 /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
+		F1659E5624B2DF0F00E4C2A5 /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
 		F17B306924A7E9D80043F9AE /* Get Fit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get Fit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17B306C24A7E9D80043F9AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F17B306E24A7E9D80043F9AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				F1659E5224B1A1EE00E4C2A5 /* FoodVC.swift */,
 				F1659E5424B1A22D00E4C2A5 /* Updater.swift */,
 				F17B307224A7E9D80043F9AE /* Main.storyboard */,
+				F1659E5624B2DF0F00E4C2A5 /* ActivityVC.swift */,
 				F1AD3C2624A823DC00AF313E /* home_icon.png */,
 				F17B307824A7E9DC0043F9AE /* Assets.xcassets */,
 				F17B307A24A7E9DC0043F9AE /* LaunchScreen.storyboard */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17B307124A7E9D80043F9AE /* ViewController.swift in Sources */,
+				F1659E5724B2DF0F00E4C2A5 /* ActivityVC.swift in Sources */,
 				F1659E4E24B132F200E4C2A5 /* HealthData.swift in Sources */,
 				F1659E5524B1A22D00E4C2A5 /* Updater.swift in Sources */,
 				F1659E5324B1A1EE00E4C2A5 /* FoodVC.swift in Sources */,

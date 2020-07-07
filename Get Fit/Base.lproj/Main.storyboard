@@ -47,6 +47,9 @@
                                 <state key="normal" title="Edit Activity">
                                     <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="2tX-ET-Ckw" kind="show" identifier="ActivitySegue" id="jVO-h9-3CN"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-jx-cOE">
                                 <rect key="frame" x="20" y="109" width="374" height="156"/>
@@ -84,7 +87,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.9710144927537" y="109.82142857142857"/>
+            <point key="canvasLocation" x="2451" y="110"/>
+        </scene>
+        <!--ActivityVC-->
+        <scene sceneID="KO0-4X-hek">
+            <objects>
+                <viewController id="2tX-ET-Ckw" customClass="ActivityVC" customModule="Get_Fit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V1a-RO-Pkm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VY-Hb-9xi">
+                                <rect key="frame" x="20" y="218" width="374" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
+                                <state key="normal" title="Steps">
+                                    <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onStepsPressed:" destination="2tX-ET-Ckw" eventType="touchUpInside" id="WUh-TJ-OBc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxM-t5-JSL">
+                                <rect key="frame" x="20" y="380" width="374" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
+                                <state key="normal" title="Miles">
+                                    <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onMilesPressed:" destination="2tX-ET-Ckw" eventType="touchUpInside" id="bBK-do-Txe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ANr-dK-bh8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XMP-AI-teW"/>
+                    <connections>
+                        <outlet property="milesOutlet" destination="LxM-t5-JSL" id="geN-Lf-9pH"/>
+                        <outlet property="stepsOutlet" destination="0VY-Hb-9xi" id="5dc-mx-4QE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ekO-FQ-Du5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3230" y="110"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Cd3-Lu-dFG">
@@ -204,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiA-nB-Q2U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823" y="991"/>
+            <point key="canvasLocation" x="2451" y="825"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="K58-2G-GS8">
