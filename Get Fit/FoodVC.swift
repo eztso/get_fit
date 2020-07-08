@@ -20,7 +20,7 @@ class FoodVC: UIViewController {
         let alertController = UIAlertController(title: "Change Sugar", message: "", preferredStyle: UIAlertController.Style.alert)
         
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
-            Constant.healthdata.foodSugar = Double(alertController.textFields?[0].text ?? "0")
+            Constant.healthdata.foodSugar = Double(alertController.textFields?[0].text ?? "0") ?? 0
             self.sugarOutlet.setTitle("Sugar: " + String(Constant.healthdata.foodSugar!) + " grams", for: .normal)
             
             
@@ -40,7 +40,7 @@ class FoodVC: UIViewController {
         let alertController = UIAlertController(title: "Change Calories", message: "", preferredStyle: UIAlertController.Style.alert)
         
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
-            Constant.healthdata.foodCalories = Double(alertController.textFields?[0].text ?? "0")
+            Constant.healthdata.foodCalories = Double(alertController.textFields?[0].text ?? "0") ?? 0
             self.calorieOutlet.setTitle("Calories: " + String(Constant.healthdata.foodCalories!) + " kcal", for: .normal)
             
             
@@ -60,7 +60,7 @@ class FoodVC: UIViewController {
         let alertController = UIAlertController(title: "Change Weight", message: "", preferredStyle: UIAlertController.Style.alert)
         
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
-            Constant.healthdata.foodProtein = Double(alertController.textFields?[0].text ?? "0")
+            Constant.healthdata.foodProtein = Double(alertController.textFields?[0].text ?? "0") ?? 0
             self.proteinOutlet.setTitle("Protein: " + String(Constant.healthdata.foodProtein!) + " grams", for: .normal)
             
             
@@ -80,7 +80,7 @@ class FoodVC: UIViewController {
         let alertController = UIAlertController(title: "Change Fat", message: "", preferredStyle: UIAlertController.Style.alert)
         
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
-            Constant.healthdata.foodFat = Double(alertController.textFields?[0].text ?? "0")
+            Constant.healthdata.foodFat = Double(alertController.textFields?[0].text ?? "0") ?? 0
             self.fatOutlet.setTitle("Fat: " + String(Constant.healthdata.foodFat!) + " grams", for: .normal)
             
             
