@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16CF8DF4B24D485A124AC9CE /* Pods_Get_Fit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF496DD02BF99AEC9B8452F /* Pods_Get_Fit.framework */; };
+		4C2E6D2F24B551130006536A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E6D2E24B551130006536A /* SettingsViewController.swift */; };
 		F1659E4E24B132F200E4C2A5 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1659E4D24B132F200E4C2A5 /* HealthData.swift */; };
 		F1659E5124B1468800E4C2A5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1659E5024B1468800E4C2A5 /* HealthKit.framework */; };
 		F1659E5324B1A1EE00E4C2A5 /* FoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1659E5224B1A1EE00E4C2A5 /* FoodVC.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C2E6D2E24B551130006536A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8CF496DD02BF99AEC9B8452F /* Pods_Get_Fit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Get_Fit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45263F77838324A345251BF /* Pods-Get Fit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Fit.release.xcconfig"; path = "Target Support Files/Pods-Get Fit/Pods-Get Fit.release.xcconfig"; sourceTree = "<group>"; };
 		B9EB4E5F77223C3B8595D41E /* Pods-Get Fit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Fit.debug.xcconfig"; path = "Target Support Files/Pods-Get Fit/Pods-Get Fit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				F17B307D24A7E9DC0043F9AE /* Info.plist */,
 				F17B307524A7E9D80043F9AE /* Get_Fit.xcdatamodeld */,
 				F1659E4D24B132F200E4C2A5 /* HealthData.swift */,
+				4C2E6D2E24B551130006536A /* SettingsViewController.swift */,
 			);
 			path = "Get Fit";
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				F17B306D24A7E9D80043F9AE /* AppDelegate.swift in Sources */,
 				F17B307724A7E9D80043F9AE /* Get_Fit.xcdatamodeld in Sources */,
 				F17B306F24A7E9D80043F9AE /* SceneDelegate.swift in Sources */,
+				4C2E6D2F24B551130006536A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

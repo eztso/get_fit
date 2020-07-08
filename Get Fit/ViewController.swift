@@ -75,7 +75,9 @@ class ViewController: UIViewController, Updater {
                  }
 
              })
+        overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
     }
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

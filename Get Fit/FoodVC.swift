@@ -115,11 +115,6 @@ class FoodVC: UIViewController {
         if let fat = Constant.healthdata.foodFat {
                   fatOutlet.setTitle("Fat: " + String(fat) + " grams", for: .normal)
               }
+        overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
     }
-    
-    
-    
-    
-    
-    
 }
