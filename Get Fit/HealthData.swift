@@ -31,29 +31,23 @@ class HealthData {
     var stepsTaken: Double?
     
     let permissions = Set([HKObjectType.workoutType(),
-    HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-    HKObjectType.quantityType(forIdentifier: .stepCount)!,
-    HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
-    HKObjectType.quantityType(forIdentifier: .heartRate)!])
+                           HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+                           HKObjectType.quantityType(forIdentifier: .stepCount)!,
+                           HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                           HKObjectType.quantityType(forIdentifier: .heartRate)!])
     
     
-
+    
     init() {
-            // Add code to use HealthKit here.
-            healthStore = HKHealthStore()
-       healthStore.requestAuthorization(toShare: permissions, read: permissions) { (success, error) in
-            if success {
-                self.getTodaysSteps(completion: self.setTodaysSteps)
+        // Add code to use HealthKit here.
+        healthStore = HKHealthStore()
+        healthStore.requestAuthorization(toShare: permissions, read: permissions) { (success, error) in
 
-            }
         }
-
-    }
-    func setTodaysSteps(steps: Double) {
-
-        self.stepsTaken = steps
+        
     }
 
+    
     func getTodaysSteps(completion: @escaping (Double) -> Void) {
         let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
         
@@ -70,6 +64,63 @@ class HealthData {
         }
         
         healthStore.execute(query)
+    }
+    
+    func getTodaysMiles(completion: @escaping (Double) -> Void) {
+        let milesQuantityType = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
+        
+        let now = Date()
+        let startOfDay = Calendar.current.startOfDay(for: now)
+        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
+        
+        let query = HKStatisticsQuery(quantityType: milesQuantityType, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, _ in
+            guard let result = result, let sum = result.sumQuantity() else {
+                completion(0.0)
+                return
+            }
+            completion(sum.doubleValue(for: HKUnit.mile()))
+        }
+        
+        healthStore.execute(query)
+    }
+    func setTodaysSteps(steps: Double) {
+        let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
+        
+        let now = Date()
+        let startOfDay = Calendar.current.startOfDay(for: now)
+        
+        let s = HKQuantitySample.init(type: stepsQuantityType,
+                                          quantity: HKQuantity.init(unit: HKUnit.count(), doubleValue: steps),
+                                          start: startOfDay,
+                                          end: now)
+        
+        healthStore.save(s) { success, error in
+            if (error != nil) {
+                print("Error: \(String(describing: error))")
+            }
+            if success {
+                print("Saved: \(success)")
+            }
+        }
+    }
+    func setTodaysMiles(miles: Double) {
+        let milesQuantityType = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
+        
+        let now = Date()
+        let startOfDay = Calendar.current.startOfDay(for: now)
+        
+        let m = HKQuantitySample.init(type: milesQuantityType,
+                                          quantity: HKQuantity.init(unit: HKUnit.mile(), doubleValue: miles),
+                                          start: startOfDay,
+                                          end: now)
+        healthStore.save(m) { success, error in
+            if (error != nil) {
+                print("Error: \(String(describing: error))")
+            }
+            if success {
+                print("Saved: \(success)")
+            }
+        }
     }
 }
 
