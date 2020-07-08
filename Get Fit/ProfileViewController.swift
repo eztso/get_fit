@@ -11,6 +11,12 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profilePicImageView: UIImageView!
+    @IBOutlet weak var nameView: UIView!
+    
+    func formatUIView(view: UIView) {
+        view.layer.cornerRadius = 10.0
+        view.layer.masksToBounds = true
+    }
     
     func makeImageViewCicular(image: UIImageView) {
         image.layer.borderWidth = 1
@@ -24,6 +30,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         makeImageViewCicular(image: profilePicImageView)
+        formatUIView(view: nameView)
     }
     
     override func viewWillAppear(_ animated: Bool) {

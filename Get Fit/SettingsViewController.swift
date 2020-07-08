@@ -26,7 +26,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var dataRetentionSwitch: UISwitch!
     
     func formatUIView(view: UIView) {
-//        view.addViewBorder(borderColor: UIColor.gray.cgColor, borderWith: 1.5, borderCornerRadius: 1.5)
         view.layer.cornerRadius = 10.0
         view.layer.masksToBounds = true
     }
