@@ -22,6 +22,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var darkModeSettingView: UIView!
     @IBOutlet weak var dataRetentionSettingView: UIView!
     @IBOutlet weak var darkModeSwitch: UISwitch!
+    @IBOutlet weak var notificationsSwitch: UISwitch!
+    @IBOutlet weak var dataRetentionSwitch: UISwitch!
     
     func formatUIView(view: UIView) {
 //        view.addViewBorder(borderColor: UIColor.gray.cgColor, borderWith: 1.5, borderCornerRadius: 1.5)
@@ -36,6 +38,8 @@ class SettingsViewController: UIViewController {
         formatUIView(view: darkModeSettingView)
         formatUIView(view: dataRetentionSettingView)
         darkModeSwitch.isOn = UserDefaults.standard.bool(forKey: "darkModeOn")
+        notificationsSwitch.isOn = UserDefaults.standard.bool(forKey: "notificationsOn")
+        dataRetentionSwitch.isOn = UserDefaults.standard.bool(forKey: "dataRetentionOn")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,5 +51,15 @@ class SettingsViewController: UIViewController {
         let defaults = UserDefaults.standard
         defaults.set(darkModeSwitch.isOn, forKey: "darkModeOn")
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
+    }
+    
+    @IBAction func notificationsToggled(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(notificationsSwitch.isOn, forKey: "notificationsOn")
+    }
+    
+    @IBAction func dataRetentionToggled(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(dataRetentionSwitch.isOn, forKey: "dataRetentionOn")
     }
 }
