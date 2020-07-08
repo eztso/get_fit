@@ -279,6 +279,9 @@
                                         <rect key="frame" x="343" y="7" width="18" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pencil" catalog="system"/>
+                                        <connections>
+                                            <action selector="editNameButtonPressed:" destination="7N5-km-zSR" eventType="touchUpInside" id="IDJ-8A-Fpz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -305,6 +308,9 @@
                                         <rect key="frame" x="343" y="7" width="18" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pencil" catalog="system"/>
+                                        <connections>
+                                            <action selector="editDobButtonPressed:" destination="7N5-km-zSR" eventType="touchUpInside" id="gR0-Y4-Vvl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -331,6 +337,9 @@
                                         <rect key="frame" x="343" y="7" width="18" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pencil" catalog="system"/>
+                                        <connections>
+                                            <action selector="editHeightButtonPressed:" destination="7N5-km-zSR" eventType="touchUpInside" id="FEY-i7-8Zf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -357,6 +366,9 @@
                                         <rect key="frame" x="343" y="7" width="18" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pencil" catalog="system"/>
+                                        <connections>
+                                            <action selector="editEmailButtonPressed:" destination="7N5-km-zSR" eventType="touchUpInside" id="ypC-hD-LoY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -367,9 +379,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="3nT-gI-FEV"/>
                     <connections>
+                        <outlet property="dobLabel" destination="J8Y-u0-fuc" id="k8d-oC-gh5"/>
                         <outlet property="dobView" destination="AA8-cW-peB" id="evv-Oj-Mry"/>
+                        <outlet property="editDobButton" destination="M4K-an-O39" id="MVG-7j-JaC"/>
+                        <outlet property="editEmailButton" destination="eze-cX-rQm" id="XFj-Mw-ekt"/>
+                        <outlet property="editHeightButton" destination="6fB-Mn-ZgD" id="VRC-Ve-hNU"/>
+                        <outlet property="editNameButton" destination="SUv-iL-Icl" id="FVw-No-pAw"/>
+                        <outlet property="emailLabel" destination="lfo-Zf-lPq" id="Otq-wY-S1p"/>
                         <outlet property="emailView" destination="YVf-Z2-rzs" id="are-hI-3c8"/>
+                        <outlet property="heightLabel" destination="9n7-vY-T9l" id="ofz-GD-7zv"/>
                         <outlet property="heightView" destination="KdS-rZ-4pi" id="a6b-VS-zgE"/>
+                        <outlet property="nameLabel" destination="Vke-xB-5rI" id="2fn-uo-xhI"/>
                         <outlet property="nameView" destination="Mlp-Co-UJ2" id="qrc-2k-0TJ"/>
                         <outlet property="profilePicImageView" destination="QIe-V6-Xli" id="rI3-t9-pPK"/>
                     </connections>

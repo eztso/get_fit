@@ -16,6 +16,16 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var heightView: UIView!
     @IBOutlet weak var emailView: UIView!
     
+    @IBOutlet weak var editNameButton: UIButton!
+    @IBOutlet weak var editDobButton: UIButton!
+    @IBOutlet weak var editHeightButton: UIButton!
+    @IBOutlet weak var editEmailButton: UIButton!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dobLabel: UILabel!
+    @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
     func formatUIView(view: UIView) {
         view.layer.cornerRadius = 10.0
         view.layer.masksToBounds = true
@@ -42,5 +52,49 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
+    }
+    
+    @IBAction func editNameButtonPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: "Change Name", message: "", preferredStyle: UIAlertController.Style.alert)
+
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+            self.nameLabel.text = alertController.textFields?[0].text ?? self.nameLabel.text
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
+            (action : UIAlertAction!) -> Void in })
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Name"
+        }
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func editDobButtonPressed(_ sender: Any) {
+    }
+    
+    @IBAction func editHeightButtonPressed(_ sender: Any) {
+    }
+    
+    @IBAction func editEmailButtonPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: "Change Email", message: "", preferredStyle: UIAlertController.Style.alert)
+
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+            self.emailLabel.text = alertController.textFields?[0].text ?? self.emailLabel.text
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
+            (action : UIAlertAction!) -> Void in })
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Email"
+        }
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
     }
 }
