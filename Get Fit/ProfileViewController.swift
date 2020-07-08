@@ -12,6 +12,9 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profilePicImageView: UIImageView!
     @IBOutlet weak var nameView: UIView!
+    @IBOutlet weak var dobView: UIView!
+    @IBOutlet weak var heightView: UIView!
+    @IBOutlet weak var emailView: UIView!
     
     func formatUIView(view: UIView) {
         view.layer.cornerRadius = 10.0
@@ -31,22 +34,13 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
         makeImageViewCicular(image: profilePicImageView)
         formatUIView(view: nameView)
+        formatUIView(view: dobView)
+        formatUIView(view: heightView)
+        formatUIView(view: emailView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
