@@ -26,7 +26,7 @@ class ViewController: UIViewController, Updater {
         Constant.healthdata.foodCalories = calories
     }
     let segueID = "FoodSegue"
-    var weight : Double?
+    var weight : Double? = 0
     @IBOutlet weak var weightButton: UIButton!
     @IBOutlet weak var foodButton: UIButton!
     @IBOutlet weak var activityButton: UIButton!
@@ -36,7 +36,7 @@ class ViewController: UIViewController, Updater {
         let alertController = UIAlertController(title: "Change Weight", message: "", preferredStyle: UIAlertController.Style.alert)
 
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
-            self.weight = Double(alertController.textFields?[0].text ?? "0")
+            self.weight = Double(alertController.textFields?[0].text ?? "0") ?? 0
             self.weightButton.setTitle(String(self.weight!) + " lbs", for: .normal)
 
 

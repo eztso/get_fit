@@ -26,6 +26,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    private var datePicker: UIDatePicker?
+    
     func formatUIView(view: UIView) {
         view.layer.cornerRadius = 10.0
         view.layer.masksToBounds = true
@@ -47,6 +49,10 @@ class ProfileViewController: UIViewController {
         formatUIView(view: dobView)
         formatUIView(view: heightView)
         formatUIView(view: emailView)
+        
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        datePicker?.center = view.center
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,9 +80,41 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func editDobButtonPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: "Change Date of Birth", message: "", preferredStyle: UIAlertController.Style.alert)
+
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+            self.dobLabel.text = alertController.textFields?[0].text ?? self.dobLabel.text
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
+            (action : UIAlertAction!) -> Void in })
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Date of Birth"
+        }
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func editHeightButtonPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: "Change Height", message: "", preferredStyle: UIAlertController.Style.alert)
+
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+            self.heightLabel.text = alertController.textFields?[0].text ?? self.heightLabel.text
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
+            (action : UIAlertAction!) -> Void in })
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Height"
+        }
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func editEmailButtonPressed(_ sender: Any) {
