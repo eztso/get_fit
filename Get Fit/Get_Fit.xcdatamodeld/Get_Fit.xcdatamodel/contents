@@ -2,8 +2,9 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="HistoryEntity" representedClassName="HistoryEntity" syncable="YES" codeGenerationType="class">
         <attribute name="history" optional="YES" attributeType="Transformable" customClassName="History"/>
+        <attribute name="user" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="HistoryEntity" positionX="-63" positionY="-18" width="128" height="58"/>
+        <element name="HistoryEntity" positionX="-63" positionY="-18" width="128" height="73"/>
     </elements>
 </model>

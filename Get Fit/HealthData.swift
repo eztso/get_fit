@@ -95,6 +95,11 @@ class HealthData {
         createData()
         
     }
+    func setTodaysWeight(w: Double) {
+          check()
+        self.history.dailyHealth[0].weight = w
+          createData()
+    }
     
     
     
