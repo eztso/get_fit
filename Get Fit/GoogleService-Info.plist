@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>54090491120-qi19uprg80st4f3ta9bue6k9rbv1ehlb.apps.googleusercontent.com</string>
+	<string>268885866794-ohpj2u8mtfd4rhoes3h73f5cl0r4sqku.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.54090491120-qi19uprg80st4f3ta9bue6k9rbv1ehlb</string>
+	<string>com.googleusercontent.apps.268885866794-ohpj2u8mtfd4rhoes3h73f5cl0r4sqku</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAr4ICmhFmpInt_k05ybRVysWquqCNbOYc</string>
+	<string>AIzaSyAOPdLC7Yp_nycX3uqYmdP0B_yPRANZF1c</string>
 	<key>GCM_SENDER_ID</key>
-	<string>54090491120</string>
+	<string>268885866794</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.ewin.Get-Fit</string>
 	<key>PROJECT_ID</key>
-	<string>get-fit-ab913</string>
+	<string>cs371l-hw6-952af</string>
 	<key>STORAGE_BUCKET</key>
-	<string>get-fit-ab913.appspot.com</string>
+	<string>cs371l-hw6-952af.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:54090491120:ios:4395a4397ca3c6e4ef8e35</string>
+	<string>1:268885866794:ios:8ea7e55cd4b3fc3ae14653</string>
 	<key>DATABASE_URL</key>
-	<string>https://get-fit-ab913.firebaseio.com</string>
+	<string>https://cs371l-hw6-952af.firebaseio.com</string>
 </dict>
 </plist>
