@@ -27,6 +27,7 @@ class ViewController: UIViewController, Updater {
     func updateFoodCalories(calories: Double) {
         Constant.healthdata.setTodaysFoodCalories(fc: calories)
     }
+    var challenge : Challenge?
     let segueID = "FoodSegue"
     @IBOutlet weak var weightButton: UIButton!
     @IBOutlet weak var foodButton: UIButton!
@@ -34,6 +35,13 @@ class ViewController: UIViewController, Updater {
    
     @IBOutlet weak var cardView: CardUIView!
     
+    @IBOutlet weak var challengeLabel: UILabel!
+    
+    @IBOutlet weak var challengeOutlet: UIButton!
+    @IBAction func onChallengeButtonPressed(_ sender: Any) {
+        Constant.healthdata.setTodaysChallenge(ch: challenge!.idx)
+        challengeOutlet.isHidden = true
+    }
     @IBAction func onWeightButtonPressed(_ sender: Any) {
         let alertController = UIAlertController(title: "Change Weight", message: "", preferredStyle: UIAlertController.Style.alert)
 
@@ -62,10 +70,12 @@ class ViewController: UIViewController, Updater {
         Constant.healthdata.getTodaysSteps(completion: {(ans) -> Void in
             print(ans)
             DispatchQueue.main.async { () in
+                print("steps" + String(ans))
                 self.cardView.stepsTaken.text! = String(Int(ans))
             }
 
         })
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,9 +90,34 @@ class ViewController: UIViewController, Updater {
                       
                     }
                  }
-
-             })
+           
+                
+            }
+        )
         
+        if Constant.healthdata.getHealthForDay().curChallenge == -1 {
+                       challenge = Challenge()
+            challengeLabel.text = challenge!.descriptions[challenge!.idx]
+            challengeOutlet.isHidden = false
+        }
+        else if Constant.healthdata.getHealthForDay().curChallenge == -2 {
+            challengeOutlet.isHidden = true
+            challengeLabel.text = "completed todays challenge"
+            
+            
+        }
+        else {
+            challengeOutlet.isHidden = true
+            challenge = Challenge(idx: Constant.healthdata.getHealthForDay().curChallenge)
+            challengeLabel.text = challenge!.descriptions[challenge!.idx]
+            if (challenge!.checkCompletion()) {
+                challenge!.idx = -2
+                challengeLabel.text! = "completed todays challenge"
+                Constant.healthdata.addPoints()
+                
+            }
+        }
+            
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
       
         var t = ""
@@ -93,6 +128,9 @@ class ViewController: UIViewController, Updater {
             t = String(Constant.healthdata.getHealthForDay().weight!) + " lbs"
         }
         self.weightButton.setTitle(t, for: .normal)
+            self.cardView.BMI.text = "BMI: " + String(Int(Constant.healthdata.getBMI()))
+        self.cardView.pointsLabel.text = "Points: " + String(Constant.healthdata.getPoints())
+            
         
     }
 

@@ -12,6 +12,9 @@ class CardUIView: UIView {
     @IBOutlet weak var stepsTaken: UILabel!
     @IBOutlet weak var arrow: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var BMI : UILabel!
+    @IBOutlet weak var pointsLabel:
+        UILabel!
     /*
      // Only override draw() if you perform custom drawing.
      // An empty implementation adversely affects performance during animation.

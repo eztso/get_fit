@@ -85,6 +85,7 @@ class ProfileViewController: UIViewController {
     }
     
     func userProfileUpdate(key: String, newVal: String) {
+        print(key + ":" + newVal)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -112,6 +113,7 @@ class ProfileViewController: UIViewController {
             else {
                 let person: NSManagedObject = result[0]
                 person.setValue(newVal, forKey: key)
+                
             }
         }catch {
             

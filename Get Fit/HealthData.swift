@@ -102,6 +102,17 @@ class HealthData {
         self.history.dailyHealth[0].weight = w
         createData()
     }
+    func setTodaysChallenge(ch: Int) {
+        check()
+        self.history.dailyHealth[0].curChallenge = ch
+        createData()
+        
+    }
+    func addPoints(points: Int = 50) {
+        check()
+        self.history.points = points
+        createData()
+    }
     
     
     
@@ -250,6 +261,49 @@ class HealthData {
         check()
         return self.history.dailyHealth[day]
     }
+    func getHeight() -> Double {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return 175}
+        
+        //We need to create a context from this container
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        //Prepare the request of type NSFetchRequest  for the entity
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ProfileEntity")
+
+        let predicate = NSPredicate(format: "user = %@", Constant.currentUser)
+        fetchRequest.predicate = predicate
+
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            var str = "175"
+            for data in result as! [NSManagedObject] {
+                
+               let val = data.value(forKey: "height")
+                if val != nil {
+                    str = val as! String
+                }
+                print(str)
+                return Double(str )!
+            }
+        }catch {
+            
+            print("Failed")
+        }
+        return 175
+    }
+    func getPoints()-> Int {
+        return history.points
+    }
+    func getBMI() -> Double {
+        print("boof" + String(703.0 * getHealthForDay().weight!))
+        print("res" + String((703.0 * getHealthForDay().weight!) / pow(getHeight() / 2.54, 2)))
+        print("ahhh")
+        return  (703.0 * getHealthForDay().weight!) / pow(getHeight() / 2.54, 2)
+            
+        
+        
+    }
+    
 }
 
 

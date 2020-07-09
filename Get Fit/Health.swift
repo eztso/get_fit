@@ -17,6 +17,7 @@ public class Health: NSObject, NSCoding {
     var foodSugar:Double? = 0
     var weight: Double? = 0
     var isValid : Bool = false;
+    var curChallenge: Int = -1;
 
     public func encode(with coder: NSCoder) {
         coder.encode(caloriesBurned!, forKey: "caloriesBurned")
@@ -27,11 +28,12 @@ public class Health: NSObject, NSCoding {
         coder.encode(date!, forKey: "date")
         coder.encode(weight!, forKey: "weight")
         coder.encode(isValid, forKey: "isValid")
+        coder.encode(curChallenge, forKey: "curChallenge")
 
         
         
     }
-    init(cb: Double, fc: Double, fp: Double, ff: Double, fs: Double, iv: Bool, d: String, w: Double){
+    init(cb: Double, fc: Double, fp: Double, ff: Double, fs: Double, iv: Bool, d: String, w: Double, ch: Int){
         self.caloriesBurned = cb
         self.foodCalories = fc
         self.foodFat = ff
@@ -40,6 +42,7 @@ public class Health: NSObject, NSCoding {
         self.isValid = iv
         self.date = d
         self.weight = w
+        self.curChallenge = ch
         
     }
     public required convenience init?(coder: NSCoder) {
@@ -51,8 +54,9 @@ public class Health: NSObject, NSCoding {
         let iv = coder.decodeBool(forKey: "isValid")
         let d = coder.decodeObject(forKey: "date") as! String
         let w = coder.decodeDouble(forKey: "weight")
+        let ch = coder.decodeInt32(forKey: "curChallenge")
 
-        self.init(cb: cb, fc: fc, fp: fp, ff:ff, fs: fs, iv: iv, d: d, w: w)
+        self.init(cb: cb, fc: fc, fp: fp, ff:ff, fs: fs, iv: iv, d: d, w: w, ch: Int(ch))
         
     }
     public override init() {

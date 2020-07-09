@@ -31,6 +31,7 @@
 		F17B307924A7E9DC0043F9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17B307824A7E9DC0043F9AE /* Assets.xcassets */; };
 		F17B307C24A7E9DC0043F9AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17B307A24A7E9DC0043F9AE /* LaunchScreen.storyboard */; };
 		F1AD3C2724A823DD00AF313E /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD3C2624A823DC00AF313E /* home_icon.png */; };
+		F1E1C48E24B762AD003B51AA /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1C48D24B762AD003B51AA /* Challenge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		F17B307B24A7E9DC0043F9AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F17B307D24A7E9DC0043F9AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1AD3C2624A823DC00AF313E /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = SOURCE_ROOT; };
+		F1E1C48D24B762AD003B51AA /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				4C2E6D2E24B551130006536A /* SettingsViewController.swift */,
 				4C2E6D3224B5712F0006536A /* ProfileViewController.swift */,
 				F15F33FB24B6759700C8EE48 /* History.swift */,
+				F1E1C48D24B762AD003B51AA /* Challenge.swift */,
 				F15F33FF24B67A2000C8EE48 /* Health.swift */,
 				4CCB449224B69771009CFD49 /* LoginViewController.swift */,
 			);
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17B307124A7E9D80043F9AE /* ViewController.swift in Sources */,
+				F1E1C48E24B762AD003B51AA /* Challenge.swift in Sources */,
 				F1659E5724B2DF0F00E4C2A5 /* ActivityVC.swift in Sources */,
 				F15F340424B71B4900C8EE48 /* CalenderVC.swift in Sources */,
 				4C2E6D3324B5712F0006536A /* ProfileViewController.swift in Sources */,
