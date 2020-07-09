@@ -106,6 +106,11 @@ class ViewController: UIViewController, Updater {
         }
     }
     
+    func formatUIView(view: UIView) {
+        view.layer.cornerRadius = 10.0
+        view.layer.masksToBounds = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -118,6 +123,9 @@ class ViewController: UIViewController, Updater {
 
         })
         sendNotifications(hour: 12) // Send notifications at noon everyday
+        formatUIView(view: weightButton)
+        formatUIView(view: foodButton)
+        formatUIView(view: activityButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
