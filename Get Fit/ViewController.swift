@@ -55,6 +55,57 @@ class ViewController: UIViewController, Updater {
         
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func sendNotifications(hour: Int) {
+        // create an object that holds the data for our notification
+        let numSteps: Int = Int(cardView.stepsTaken.text ?? "0") ?? 0
+        if !UserDefaults.standard.bool(forKey: "notificationsOn") {
+            return
+        }
+        
+        let notification = UNMutableNotificationContent()
+        
+        if numSteps > 8000 {
+            notification.title = "Great Job!"
+            notification.body = "You walked \(numSteps) steps today!"
+        }
+        else {
+            notification.title = "Stay Active!"
+            notification.body = "You're \(8000 - numSteps) steps away from your goal"
+            
+        }
+        
+        var dateFire = Date()
+        let calendar = NSCalendar(identifier: .gregorian)!;
+        var fireComponents = calendar.components( [NSCalendar.Unit.day, NSCalendar.Unit.month, NSCalendar.Unit.year, NSCalendar.Unit.hour, NSCalendar.Unit.minute], from:dateFire)
+        if (fireComponents.hour! > hour
+            || (fireComponents.hour == hour) ) {
+
+            dateFire = dateFire.addingTimeInterval(86400)  // Use tomorrow's date
+            fireComponents = calendar.components( [NSCalendar.Unit.day, NSCalendar.Unit.month, NSCalendar.Unit.year, NSCalendar.Unit.hour, NSCalendar.Unit.minute], from:dateFire);
+        }
+
+        // set up the time
+        fireComponents.hour = hour
+        fireComponents.minute = 0
+        dateFire = calendar.date(from: fireComponents)!
+
+
+        let triggerDaily = Calendar.current.dateComponents([.hour, .minute, .second], from: dateFire)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+        
+        // set up a request to tell iOS to submit the notification using that trigger
+        let request = UNNotificationRequest(
+            identifier: "GetFitStepNotification",
+            content: notification,
+            trigger: trigger)
+        // submit the request to iOS
+        UNUserNotificationCenter.current().add(request) {
+            (error) in
+            print("Request error: ",error as Any)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -66,6 +117,7 @@ class ViewController: UIViewController, Updater {
             }
 
         })
+        sendNotifications(hour: 12) // Send notifications at noon everyday
     }
     
     override func viewWillAppear(_ animated: Bool) {
