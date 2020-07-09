@@ -141,7 +141,7 @@ class ProfileViewController: UIViewController {
     @IBAction func signOutButtonPressed(_ sender: Any) {
         let alertController = UIAlertController(title: "Sign-Out", message: "Are you sure you want to sign out?", preferredStyle: UIAlertController.Style.alert)
 
-        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+        let saveAction = UIAlertAction(title: "Sign Out", style: UIAlertAction.Style.default, handler: { alert -> Void in
             self.performSegue(withIdentifier: self.signOutSegueIdentifier, sender: nil)
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
