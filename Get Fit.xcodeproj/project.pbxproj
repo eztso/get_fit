@@ -37,6 +37,7 @@
 		4C2E6D2E24B551130006536A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4C2E6D3224B5712F0006536A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4C67284824B6A2B400F73DD3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4C6964E324B7774D006D82E8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4CCB449224B69771009CFD49 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8CF496DD02BF99AEC9B8452F /* Pods_Get_Fit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Get_Fit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45263F77838324A345251BF /* Pods-Get Fit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Fit.release.xcconfig"; path = "Target Support Files/Pods-Get Fit/Pods-Get Fit.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 				F15F33FB24B6759700C8EE48 /* History.swift */,
 				F15F33FF24B67A2000C8EE48 /* Health.swift */,
 				4CCB449224B69771009CFD49 /* LoginViewController.swift */,
+				4C6964E324B7774D006D82E8 /* README.md */,
 			);
 			path = "Get Fit";
 			sourceTree = "<group>";

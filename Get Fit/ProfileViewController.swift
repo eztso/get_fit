@@ -74,7 +74,6 @@ class ProfileViewController: UIViewController {
                 emailLabel.text = data.value(forKey: "email") as? String
             }
         }catch {
-            
             print("Failed")
         }
     }
@@ -117,10 +116,6 @@ class ProfileViewController: UIViewController {
             
             print("Failed")
         }
-
-        
-        
-
     }
     
     @IBAction func editNameButtonPressed(_ sender: Any) {
