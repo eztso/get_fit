@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
         if loginSegmentControl.selectedSegmentIndex == signInIndex {
             confirmPasswordLabel.isHidden = true
             confirmPasswordTextField.isHidden = true
+            skipLoginButton.isHidden = false
             signInButton.setTitle("Sign In", for: .normal)
         }
         else {
