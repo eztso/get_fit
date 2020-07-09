@@ -15,6 +15,7 @@ public class History: NSObject, NSCoding {
     public override init() {
         super.init()
     }
+    
     init(hist: [Health], user: String) {
         dailyHealth = hist;
     }

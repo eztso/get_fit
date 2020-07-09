@@ -4,7 +4,15 @@
         <attribute name="history" optional="YES" attributeType="Transformable" customClassName="History"/>
         <attribute name="user" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="ProfileEntity" representedClassName="ProfileEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="dob" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="height" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="user" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="HistoryEntity" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="ProfileEntity" positionX="-63" positionY="0" width="128" height="118"/>
     </elements>
 </model>

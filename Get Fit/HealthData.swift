@@ -132,7 +132,7 @@ class HealthData {
         
         //Prepare the request of type NSFetchRequest  for the entity
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "HistoryEntity")
-        print("We're here \(Constant.currentUser)")
+
         let predicate = NSPredicate(format: "user = %@", Constant.currentUser)
         fetchRequest.predicate = predicate
         
