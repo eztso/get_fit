@@ -61,11 +61,18 @@ class ActivityVC: UIViewController {
                    self.present(alertController, animated: true, completion: nil)
     }
     
+    func formatUIView(view: UIView) {
+        view.layer.cornerRadius = 10.0
+        view.layer.masksToBounds = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        formatUIView(view: stepsOutlet)
+        formatUIView(view: milesOutlet)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
         dispatch.enter()
@@ -88,9 +95,6 @@ class ActivityVC: UIViewController {
            dispatch.wait()
         milesOutlet.setTitle("Distance: " + String(miles!) + " Miles", for: .normal)
         stepsOutlet.setTitle("Steps: " + String(steps!), for: .normal)
-
-        
-        
     }
     
 

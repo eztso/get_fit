@@ -16,7 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-      FirebaseApp.configure()
+        FirebaseApp.configure()
+        
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: .alert,
+            completionHandler: {
+                (success, error) in
+                if success {
+                    print("Permission granted")
+                } else {
+                    print("There was a problem")
+                }
+            }
+        )
+        
       return true
     }
 

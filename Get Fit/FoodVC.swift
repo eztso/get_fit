@@ -96,10 +96,21 @@ class FoodVC: UIViewController {
         
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func formatUIView(view: UIView) {
+        view.layer.cornerRadius = 10.0
+        view.layer.masksToBounds = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        formatUIView(view: calorieOutlet)
+        formatUIView(view: sugarOutlet)
+        formatUIView(view: proteinOutlet)
+        formatUIView(view: fatOutlet)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false

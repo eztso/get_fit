@@ -31,10 +31,16 @@ class LoginViewController: UIViewController {
         loginSegmentControl.sendActions(for: UIControl.Event.valueChanged)
     }
     
+    func formatUIView(view: UIView) {
+        view.layer.cornerRadius = 10.0
+        view.layer.masksToBounds = true
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
-        
+        formatUIView(view: skipLoginButton)
+        formatUIView(view: signInButton)
     }
     
 
