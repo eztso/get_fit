@@ -6,6 +6,8 @@ target 'Get Fit' do
   use_frameworks!
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Alamofire', '5.0.2'
+  pod 'Firebase/Analytics'
   # Pods for Get Fit
 
 end
