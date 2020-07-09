@@ -1,18 +1,20 @@
 Project Name: Get Fit
 Team Members: Ewin Zuo, Michael Lee
 Dependencies: 
-- Swift 5
-- iOS 13.2
-- Pods: Alamofire, Firebase
+* Swift 5
+* iOS 13.2
+* Pods: Alamofire, Firebase
 
 Special Instructions:
-- You'll probably need to run pod init && pod install
-- Upon opening the app give permission to HealthKit and allow notifications
+* You'll probably need to run pod init && pod install
+* Upon opening the app give permission to HealthKit and allow notifications
 
 General Notes:
-- Local notifications are set to trigger at 12pm every day based on number of steps taken.
-- Pedometer is set to increment the steps taken label on the home screen based on pedometer data provided by healthkit. However on simulator there is no way to programmatically trigger this
+* Local notifications are set to trigger at 12pm every day based on number of steps taken.
+* Pedometer is set to increment the steps taken label on the home screen based on pedometer data provided by healthkit. However on simulator there is no way to programmatically trigger this
 
+Changes From Proposal:
+* We found that having a grid-style calender view was very difficult to working due to the number of edge cases and day layout. Ultimately we compromised to retain the ability to access all past days by instead implementing the calender as a scrolling table of dates sorted in chronological order.
 
 | **Feature**  | **Description**  | **Percentage**  |
 |---|---|---|
