@@ -32,6 +32,7 @@
 		F17B307C24A7E9DC0043F9AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17B307A24A7E9DC0043F9AE /* LaunchScreen.storyboard */; };
 		F1AD3C2724A823DD00AF313E /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD3C2624A823DC00AF313E /* home_icon.png */; };
 		F1E1C48E24B762AD003B51AA /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1C48D24B762AD003B51AA /* Challenge.swift */; };
+		F1E1C49024B7AE94003B51AA /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1C48F24B7AE94003B51AA /* DayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		F17B307D24A7E9DC0043F9AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1AD3C2624A823DC00AF313E /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = SOURCE_ROOT; };
 		F1E1C48D24B762AD003B51AA /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		F1E1C48F24B7AE94003B51AA /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				F1659E5224B1A1EE00E4C2A5 /* FoodVC.swift */,
 				F1659E5424B1A22D00E4C2A5 /* Updater.swift */,
 				F17B307224A7E9D80043F9AE /* Main.storyboard */,
+				F1E1C48F24B7AE94003B51AA /* DayViewController.swift */,
 				F15F340724B738EA00C8EE48 /* CardUIView.swift */,
 				F15F340324B71B4900C8EE48 /* CalenderVC.swift */,
 				F15F340524B72F1100C8EE48 /* histCell.swift */,
@@ -270,6 +273,7 @@
 				F17B307124A7E9D80043F9AE /* ViewController.swift in Sources */,
 				F1E1C48E24B762AD003B51AA /* Challenge.swift in Sources */,
 				F1659E5724B2DF0F00E4C2A5 /* ActivityVC.swift in Sources */,
+				F1E1C49024B7AE94003B51AA /* DayViewController.swift in Sources */,
 				F15F340424B71B4900C8EE48 /* CalenderVC.swift in Sources */,
 				4C2E6D3324B5712F0006536A /* ProfileViewController.swift in Sources */,
 				F15F33FC24B6759700C8EE48 /* History.swift in Sources */,

@@ -8,6 +8,7 @@ target 'Get Fit' do
   pod 'Firebase/Firestore'
   pod 'Alamofire', '5.0.2'
   pod 'Firebase/Analytics'
+  pod 'Charts'
   # Pods for Get Fit
 
 end

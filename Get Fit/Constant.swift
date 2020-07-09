@@ -16,5 +16,6 @@ struct Constant{
     static var currentUser: String = defaultUser
     static let green = UIColor(red: 0.56, green: 0.96, blue: 0.56, alpha: 1.00)
     static let red = UIColor(red: 0.96, green: 0.56, blue: 0.56, alpha: 1.00)
+    static let blue = UIColor(red: 0.56, green: 0.56, blue: 0.96, alpha: 1.00)
 
 }

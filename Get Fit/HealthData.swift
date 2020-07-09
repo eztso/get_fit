@@ -49,7 +49,7 @@ class HealthData {
         if history.dailyHealth.count == 0 {
             history.dailyHealth = [Health](repeating: Health(), count: 90)
         }
-    
+        
         let formatter = DateFormatter()
         
         formatter.dateFormat = "yyyy-MM-dd"
@@ -98,7 +98,7 @@ class HealthData {
         
     }
     func setTodaysWeight(w: Double) {
-          check()
+        check()
         self.history.dailyHealth[0].weight = w
         createData()
     }
@@ -145,7 +145,7 @@ class HealthData {
         
         //Prepare the request of type NSFetchRequest  for the entity
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "HistoryEntity")
-
+        
         let predicate = NSPredicate(format: "user = %@", Constant.currentUser)
         fetchRequest.predicate = predicate
         
@@ -200,6 +200,23 @@ class HealthData {
         
         healthStore.execute(query)
     }
+    func getSteps(s1: Date, s2:Date, completion: @escaping (Double) -> Void) {
+         let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
+         
+         let predicate = HKQuery.predicateForSamples(withStart: s1, end: s2, options: .strictStartDate)
+         
+         let query = HKStatisticsQuery(quantityType: stepsQuantityType, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, _ in
+             guard let result = result, let sum = result.sumQuantity() else {
+                 completion(0.0)
+                 return
+             }
+             completion(sum.doubleValue(for: HKUnit.count()))
+         }
+         
+         healthStore.execute(query)
+     }
+    
+
     
     func getTodaysMiles(completion: @escaping (Double) -> Void) {
         let milesQuantityType = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
@@ -269,16 +286,16 @@ class HealthData {
         
         //Prepare the request of type NSFetchRequest  for the entity
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ProfileEntity")
-
+        
         let predicate = NSPredicate(format: "user = %@", Constant.currentUser)
         fetchRequest.predicate = predicate
-
+        
         do {
             let result = try managedContext.fetch(fetchRequest)
             var str = "175"
             for data in result as! [NSManagedObject] {
                 
-               let val = data.value(forKey: "height")
+                let val = data.value(forKey: "height")
                 if val != nil {
                     str = val as! String
                 }
@@ -299,10 +316,11 @@ class HealthData {
         print("res" + String((703.0 * getHealthForDay().weight!) / pow(getHeight() / 2.54, 2)))
         print("ahhh")
         return  (703.0 * getHealthForDay().weight!) / pow(getHeight() / 2.54, 2)
-            
+        
         
         
     }
+    
     
 }
 
