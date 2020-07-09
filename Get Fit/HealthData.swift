@@ -157,6 +157,8 @@ class HealthData {
         //We need to create a context from this container
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "HistoryEntity")
+        let predicate = NSPredicate(format: "user = %@", Constant.currentUser)
+        fetchRequest.predicate = predicate
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {
