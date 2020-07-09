@@ -10,5 +10,6 @@ import Foundation
 struct Constant{
     static var healthdata = HealthData()
     let recCalories = 2500
-    
+    static let defaultUser: String = "DEFAULT"
+    static var currentUser: String = defaultUser
 }

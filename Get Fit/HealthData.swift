@@ -98,7 +98,7 @@ class HealthData {
     func setTodaysWeight(w: Double) {
           check()
         self.history.dailyHealth[0].weight = w
-          createData()
+        createData()
     }
     
     
@@ -114,7 +114,7 @@ class HealthData {
         
         // Set the attribute values
         person.setValue(self.history, forKey: "history")
-        
+        person.setValue(Constant.currentUser, forKey: "user")
         do {
             try context.save()
             
@@ -132,6 +132,9 @@ class HealthData {
         
         //Prepare the request of type NSFetchRequest  for the entity
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "HistoryEntity")
+        print("We're here \(Constant.currentUser)")
+        let predicate = NSPredicate(format: "user = %@", Constant.currentUser)
+        fetchRequest.predicate = predicate
         
         //        fetchRequest.fetchLimit = 1
         //        fetchRequest.predicate = NSPredicate(format: "username = %@", "Ankur")

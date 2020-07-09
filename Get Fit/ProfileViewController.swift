@@ -142,6 +142,7 @@ class ProfileViewController: UIViewController {
         let alertController = UIAlertController(title: "Sign-Out", message: "Are you sure you want to sign out?", preferredStyle: UIAlertController.Style.alert)
 
         let saveAction = UIAlertAction(title: "Sign Out", style: UIAlertAction.Style.default, handler: { alert -> Void in
+            Constant.currentUser = Constant.defaultUser
             self.performSegue(withIdentifier: self.signOutSegueIdentifier, sender: nil)
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {

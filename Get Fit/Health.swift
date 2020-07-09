@@ -11,10 +11,10 @@ import Foundation
 public class Health: NSObject, NSCoding {
     var date : String? = ""
     var caloriesBurned: Double? = 0
-      var foodCalories: Double? = 0
-      var foodProtein: Double? = 0
-      var foodFat: Double? = 0
-      var foodSugar:Double? = 0
+    var foodCalories: Double? = 0
+    var foodProtein: Double? = 0
+    var foodFat: Double? = 0
+    var foodSugar:Double? = 0
     var weight: Double? = 0
     var isValid : Bool = false;
 

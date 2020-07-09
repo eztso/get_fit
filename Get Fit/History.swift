@@ -9,7 +9,7 @@
 import Foundation
 
 public class History: NSObject, NSCoding {
-    public var user = "default_user"
+    public var user = Constant.defaultUser
     public var dailyHealth: [Health] = []
     
     public override init() {

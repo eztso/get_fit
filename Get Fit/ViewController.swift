@@ -64,10 +64,6 @@ class ViewController: UIViewController, Updater {
             }
 
         })
-        title = (Constant.healthdata.getHealthForDay().weight != nil ? String(Constant.healthdata.getHealthForDay().weight!) + " lbs" : "Enter Weight")
-        self.weightButton.setTitle(title, for: .normal)
-            
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +76,14 @@ class ViewController: UIViewController, Updater {
 
              })
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
+        title = ""
+        if Constant.healthdata.getHealthForDay().weight == 0  {
+            title = "Enter Weight"
+        }
+        else {
+            title = String(Constant.healthdata.getHealthForDay().weight!) + " lbs"
+        }
+        self.weightButton.setTitle(title, for: .normal)
     }
 
     // MARK: - Navigation

@@ -34,6 +34,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
+        self.navigationController?.navigationBar.isHidden = true;
     }
     
 
@@ -79,6 +80,8 @@ class LoginViewController: UIViewController {
                 self.statusLabel.text = error.localizedDescription
             }
             else {
+                Constant.currentUser = username
+                Constant.healthdata = HealthData()
                 self.performSegue(withIdentifier: self.loginSegueIdentifier, sender: nil)
             }
         }
@@ -108,6 +111,8 @@ class LoginViewController: UIViewController {
             if error == nil {
                 Auth.auth().signIn(withEmail: username,
                                    password: password)
+                Constant.currentUser = username
+                Constant.healthdata = HealthData()
                 self.performSegue(withIdentifier: self.loginSegueIdentifier, sender: nil)
             }
             else {
@@ -130,6 +135,8 @@ class LoginViewController: UIViewController {
 //        }
 //    }
     @IBAction func skipLoginButtonPressed(_ sender: Any) {
+        Constant.currentUser = Constant.defaultUser
+        Constant.healthdata = HealthData()
         self.performSegue(withIdentifier: self.loginSegueIdentifier, sender: nil)
     }
     

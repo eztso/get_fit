@@ -524,9 +524,9 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEH-mZ-cMC">
-                                <rect key="frame" x="193" y="447" width="30" height="30"/>
+                                <rect key="frame" x="167" y="447" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Skip"/>
+                                <state key="normal" title="Guest Login"/>
                                 <connections>
                                     <action selector="skipLoginButtonPressed:" destination="zJG-BC-Kcg" eventType="touchUpInside" id="te7-5W-a5P"/>
                                 </connections>
@@ -626,6 +626,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="vIY-UB-zsf"/>
         <segue reference="55L-sy-3LM"/>
     </inferredMetricsTieBreakers>
     <resources>
