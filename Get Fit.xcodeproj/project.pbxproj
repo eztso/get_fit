@@ -10,6 +10,9 @@
 		16CF8DF4B24D485A124AC9CE /* Pods_Get_Fit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF496DD02BF99AEC9B8452F /* Pods_Get_Fit.framework */; };
 		4C2E6D2F24B551130006536A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E6D2E24B551130006536A /* SettingsViewController.swift */; };
 		4C2E6D3324B5712F0006536A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E6D3224B5712F0006536A /* ProfileViewController.swift */; };
+		F15F33FC24B6759700C8EE48 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F33FB24B6759700C8EE48 /* History.swift */; };
+		F15F33FE24B677FB00C8EE48 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F33FD24B677FB00C8EE48 /* Constant.swift */; };
+		F15F340024B67A2000C8EE48 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F33FF24B67A2000C8EE48 /* Health.swift */; };
 		F1659E4E24B132F200E4C2A5 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1659E4D24B132F200E4C2A5 /* HealthData.swift */; };
 		F1659E5124B1468800E4C2A5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1659E5024B1468800E4C2A5 /* HealthKit.framework */; };
 		F1659E5324B1A1EE00E4C2A5 /* FoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1659E5224B1A1EE00E4C2A5 /* FoodVC.swift */; };
@@ -32,6 +35,9 @@
 		8CF496DD02BF99AEC9B8452F /* Pods_Get_Fit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Get_Fit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45263F77838324A345251BF /* Pods-Get Fit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Fit.release.xcconfig"; path = "Target Support Files/Pods-Get Fit/Pods-Get Fit.release.xcconfig"; sourceTree = "<group>"; };
 		B9EB4E5F77223C3B8595D41E /* Pods-Get Fit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get Fit.debug.xcconfig"; path = "Target Support Files/Pods-Get Fit/Pods-Get Fit.debug.xcconfig"; sourceTree = "<group>"; };
+		F15F33FB24B6759700C8EE48 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		F15F33FD24B677FB00C8EE48 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F15F33FF24B67A2000C8EE48 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
 		F1659E4D24B132F200E4C2A5 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
 		F1659E4F24B1468700E4C2A5 /* Get Fit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Get Fit.entitlements"; sourceTree = "<group>"; };
 		F1659E5024B1468800E4C2A5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -118,8 +124,11 @@
 				F17B307D24A7E9DC0043F9AE /* Info.plist */,
 				F17B307524A7E9D80043F9AE /* Get_Fit.xcdatamodeld */,
 				F1659E4D24B132F200E4C2A5 /* HealthData.swift */,
+				F15F33FD24B677FB00C8EE48 /* Constant.swift */,
 				4C2E6D2E24B551130006536A /* SettingsViewController.swift */,
 				4C2E6D3224B5712F0006536A /* ProfileViewController.swift */,
+				F15F33FB24B6759700C8EE48 /* History.swift */,
+				F15F33FF24B67A2000C8EE48 /* Health.swift */,
 			);
 			path = "Get Fit";
 			sourceTree = "<group>";
@@ -244,13 +253,16 @@
 				F17B307124A7E9D80043F9AE /* ViewController.swift in Sources */,
 				F1659E5724B2DF0F00E4C2A5 /* ActivityVC.swift in Sources */,
 				4C2E6D3324B5712F0006536A /* ProfileViewController.swift in Sources */,
+				F15F33FC24B6759700C8EE48 /* History.swift in Sources */,
 				F1659E4E24B132F200E4C2A5 /* HealthData.swift in Sources */,
 				F1659E5524B1A22D00E4C2A5 /* Updater.swift in Sources */,
 				F1659E5324B1A1EE00E4C2A5 /* FoodVC.swift in Sources */,
+				F15F340024B67A2000C8EE48 /* Health.swift in Sources */,
 				F17B306D24A7E9D80043F9AE /* AppDelegate.swift in Sources */,
 				F17B307724A7E9D80043F9AE /* Get_Fit.xcdatamodeld in Sources */,
 				F17B306F24A7E9D80043F9AE /* SceneDelegate.swift in Sources */,
 				4C2E6D2F24B551130006536A /* SettingsViewController.swift in Sources */,
+				F15F33FE24B677FB00C8EE48 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

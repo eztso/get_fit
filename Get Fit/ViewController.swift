@@ -7,23 +7,24 @@
 //
 
 import UIKit
-
+import CoreData
 class ViewController: UIViewController, Updater {
     func updateFoodSugar(sugar: Double) {
-        Constant.healthdata.foodSugar = sugar
+        Constant.healthdata.setTodaysFoodSugar(fs: sugar)
     }
     
     func updateFoodProtein(protein: Double) {
-        Constant.healthdata.foodProtein = protein
+        Constant.healthdata.setTodaysFoodProtein(fp: protein)
     }
     
     func updateFoodFat(fat: Double) {
-        Constant.healthdata.foodFat = fat
+        Constant.healthdata.setTodaysFoodFat(ff: fat)
+
 
     }
     
     func updateFoodCalories(calories: Double) {
-        Constant.healthdata.foodCalories = calories
+        Constant.healthdata.setTodaysFoodCalories(fc: calories)
     }
     let segueID = "FoodSegue"
     var weight : Double? = 0

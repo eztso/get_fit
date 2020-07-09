@@ -13,7 +13,7 @@ class ActivityVC: UIViewController {
     @IBOutlet weak var stepsOutlet: UIButton!
     @IBOutlet weak var milesOutlet: UIButton!
     var steps : Int?
-    var miles: Double?
+    var miles: Double?  
     @IBAction func onStepsPressed(_ sender: Any) {
         let alertController = UIAlertController(title: "Add Steps", message: "", preferredStyle: UIAlertController.Style.alert)
 

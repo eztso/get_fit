@@ -20,8 +20,8 @@ class FoodVC: UIViewController {
         let alertController = UIAlertController(title: "Change Sugar", message: "", preferredStyle: UIAlertController.Style.alert)
         
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
-            Constant.healthdata.foodSugar = Double(alertController.textFields?[0].text ?? "0") ?? 0
-            self.sugarOutlet.setTitle("Sugar: " + String(Constant.healthdata.foodSugar!) + " grams", for: .normal)
+            Constant.healthdata.setTodaysFoodSugar(fs: Double(alertController.textFields?[0].text ?? "0") ?? 0)
+            self.sugarOutlet.setTitle("Sugar: " + String(Constant.healthdata.getHealthForDay().foodSugar!) + " grams", for: .normal)
             
             
         })
@@ -40,8 +40,8 @@ class FoodVC: UIViewController {
         let alertController = UIAlertController(title: "Change Calories", message: "", preferredStyle: UIAlertController.Style.alert)
         
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
-            Constant.healthdata.foodCalories = Double(alertController.textFields?[0].text ?? "0") ?? 0
-            self.calorieOutlet.setTitle("Calories: " + String(Constant.healthdata.foodCalories!) + " kcal", for: .normal)
+            Constant.healthdata.setTodaysFoodCalories(fc:  Double(alertController.textFields?[0].text ?? "0") ?? 0)
+            self.calorieOutlet.setTitle("Calories: " + String(Constant.healthdata.getHealthForDay().foodCalories!) + " kcal", for: .normal)
             
             
         })
@@ -60,8 +60,8 @@ class FoodVC: UIViewController {
         let alertController = UIAlertController(title: "Change Weight", message: "", preferredStyle: UIAlertController.Style.alert)
         
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
-            Constant.healthdata.foodProtein = Double(alertController.textFields?[0].text ?? "0") ?? 0
-            self.proteinOutlet.setTitle("Protein: " + String(Constant.healthdata.foodProtein!) + " grams", for: .normal)
+            Constant.healthdata.setTodaysFoodProtein(fp: Double(alertController.textFields?[0].text ?? "0") ?? 0)
+            self.proteinOutlet.setTitle("Protein: " + String(Constant.healthdata.getHealthForDay().foodProtein!) + " grams", for: .normal)
             
             
         })
@@ -80,8 +80,8 @@ class FoodVC: UIViewController {
         let alertController = UIAlertController(title: "Change Fat", message: "", preferredStyle: UIAlertController.Style.alert)
         
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
-            Constant.healthdata.foodFat = Double(alertController.textFields?[0].text ?? "0") ?? 0
-            self.fatOutlet.setTitle("Fat: " + String(Constant.healthdata.foodFat!) + " grams", for: .normal)
+            Constant.healthdata.setTodaysFoodFat(ff: Double(alertController.textFields?[0].text ?? "0") ?? 0)
+            self.fatOutlet.setTitle("Fat: " + String(Constant.healthdata.getHealthForDay().foodFat!) + " grams", for: .normal)
             
             
         })
@@ -103,16 +103,16 @@ class FoodVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let sugar = Constant.healthdata.foodSugar {
+        if let sugar = Constant.healthdata.getHealthForDay().foodSugar {
             self.sugarOutlet.setTitle("Sugar: " + String(sugar) + " grams", for: .normal)
         }
-        if let calories = Constant.healthdata.foodCalories {
+        if let calories = Constant.healthdata.getHealthForDay().foodCalories {
                   self.calorieOutlet.setTitle("Calories: " + String(calories) + " kcal", for: .normal)
               }
-        if let protein = Constant.healthdata.foodProtein {
+        if let protein = Constant.healthdata.getHealthForDay().foodProtein {
                   self.proteinOutlet.setTitle("Protein: " + String(protein) + " grams", for: .normal)
               }
-        if let fat = Constant.healthdata.foodFat {
+        if let fat = Constant.healthdata.getHealthForDay().foodFat {
                   fatOutlet.setTitle("Fat: " + String(fat) + " grams", for: .normal)
               }
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light

@@ -7,9 +7,7 @@
 //
 
 import UIKit
-
 class ProfileViewController: UIViewController {
-
     @IBOutlet weak var profilePicImageView: UIImageView!
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var dobView: UIView!
@@ -40,6 +38,8 @@ class ProfileViewController: UIViewController {
         image.layer.cornerRadius = profilePicImageView.frame.height/2
         image.clipsToBounds = true
     }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
