@@ -20,8 +20,9 @@ class ActivityVC: UIViewController {
             let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
                 let steps = Double(alertController.textFields?[0].text ?? "0")
                 self.steps = Int(steps!)
-                self.stepsOutlet.setTitle("Steps: " + String(self.steps!), for: .normal)
                 Constant.healthdata.setTodaysSteps(steps: steps!)
+                self.stepsOutlet.setTitle("Steps: " + String(self.steps!), for: .normal)
+                
 
 
             })

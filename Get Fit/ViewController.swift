@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+
 class ViewController: UIViewController, Updater {
     func updateFoodSugar(sugar: Double) {
         Constant.healthdata.setTodaysFoodSugar(fs: sugar)
@@ -30,8 +31,9 @@ class ViewController: UIViewController, Updater {
     @IBOutlet weak var weightButton: UIButton!
     @IBOutlet weak var foodButton: UIButton!
     @IBOutlet weak var activityButton: UIButton!
-    @IBOutlet weak var stepsLabel: UILabel!
-    @IBOutlet weak var cardView: UIView!
+   
+    @IBOutlet weak var cardView: CardUIView!
+    
     @IBAction func onWeightButtonPressed(_ sender: Any) {
         let alertController = UIAlertController(title: "Change Weight", message: "", preferredStyle: UIAlertController.Style.alert)
 
@@ -56,11 +58,11 @@ class ViewController: UIViewController, Updater {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        cardView.roundCorners(cornerRadius: 10.0)
+        cardView.roundCorners()
         Constant.healthdata.getTodaysSteps(completion: {(ans) -> Void in
             print(ans)
             DispatchQueue.main.async { () in
-                self.stepsLabel.text! = String(Int(ans))
+                self.cardView.stepsTaken.text! = String(Int(ans))
             }
 
         })
@@ -68,22 +70,30 @@ class ViewController: UIViewController, Updater {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true;
         Constant.healthdata.getTodaysSteps(completion: {(ans) -> Void in
                  DispatchQueue.main.async { () in
-                     self.stepsLabel.text! = String(Int(ans))
+                     self.cardView.stepsTaken.text! = String(Int(ans))
+                    if Int(ans) > Constant.recSteps {
+                        print("update color")
+                        self.cardView.borderColor = Constant.green
+                     
+                      
+                    }
                  }
 
              })
+        
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
-        title = ""
+      
+        var t = ""
         if Constant.healthdata.getHealthForDay().weight == 0  {
-            title = "Enter Weight"
+            t = "Enter Weight"
         }
         else {
-            title = String(Constant.healthdata.getHealthForDay().weight!) + " lbs"
+            t = String(Constant.healthdata.getHealthForDay().weight!) + " lbs"
         }
-        self.weightButton.setTitle(title, for: .normal)
+        self.weightButton.setTitle(t, for: .normal)
+        
     }
 
     // MARK: - Navigation
@@ -100,16 +110,4 @@ class ViewController: UIViewController, Updater {
 
 
 }
-extension UIView {
-    func roundCorners(cornerRadius: Double) {
-        
-        self.layer.cornerRadius = CGFloat(cornerRadius)
-//        self.layer.shadowColor = UIColor.darkGray.cgColor
-//        self.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
-//        self.layer.shadowRadius = 0
-//        self.layer.shadowOpacity = 0.5
-        self.layer.borderWidth = 3
-        self.layer.borderColor = UIColor(red: 0.96, green: 0.56, blue: 0.56, alpha: 1.00).cgColor
-    }
-    
-}
+

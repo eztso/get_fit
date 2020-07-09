@@ -26,6 +26,7 @@ public class Health: NSObject, NSCoding {
         coder.encode(foodSugar!, forKey: "foodSugar")
         coder.encode(date!, forKey: "date")
         coder.encode(weight!, forKey: "weight")
+        coder.encode(isValid, forKey: "isValid")
 
         
         

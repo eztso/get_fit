@@ -63,7 +63,9 @@ class HealthData {
             history.dailyHealth[0] = Health()
             history.dailyHealth[0].date = dateString
             history.dailyHealth[0].isValid = true
+            createData()
         }
+        history.dailyHealth[0].isValid = true
     }
     func setTodaysCaloriesBurned(cb: Double) {
         check()

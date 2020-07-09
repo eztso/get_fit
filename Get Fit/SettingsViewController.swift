@@ -50,6 +50,7 @@ class SettingsViewController: UIViewController {
         let defaults = UserDefaults.standard
         defaults.set(darkModeSwitch.isOn, forKey: "darkModeOn")
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
+         self.tabBarController?.overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
     }
     
     @IBAction func notificationsToggled(_ sender: Any) {

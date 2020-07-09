@@ -10,11 +10,15 @@
 		16CF8DF4B24D485A124AC9CE /* Pods_Get_Fit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF496DD02BF99AEC9B8452F /* Pods_Get_Fit.framework */; };
 		4C2E6D2F24B551130006536A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E6D2E24B551130006536A /* SettingsViewController.swift */; };
 		4C2E6D3324B5712F0006536A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E6D3224B5712F0006536A /* ProfileViewController.swift */; };
+		4C67284924B6A2B400F73DD3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C67284824B6A2B400F73DD3 /* GoogleService-Info.plist */; };
+		4CCB449324B69771009CFD49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB449224B69771009CFD49 /* LoginViewController.swift */; };
 		F15F33FC24B6759700C8EE48 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F33FB24B6759700C8EE48 /* History.swift */; };
 		F15F33FE24B677FB00C8EE48 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F33FD24B677FB00C8EE48 /* Constant.swift */; };
 		F15F340024B67A2000C8EE48 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F33FF24B67A2000C8EE48 /* Health.swift */; };
-		4C67284924B6A2B400F73DD3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C67284824B6A2B400F73DD3 /* GoogleService-Info.plist */; };
-		4CCB449324B69771009CFD49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB449224B69771009CFD49 /* LoginViewController.swift */; };
+		F15F340224B70AC300C8EE48 /* CalendarTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F340124B70AC300C8EE48 /* CalendarTVC.swift */; };
+		F15F340424B71B4900C8EE48 /* CalenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F340324B71B4900C8EE48 /* CalenderVC.swift */; };
+		F15F340624B72F1100C8EE48 /* histCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F340524B72F1100C8EE48 /* histCell.swift */; };
+		F15F340824B738EA00C8EE48 /* CardUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15F340724B738EA00C8EE48 /* CardUIView.swift */; };
 		F1659E4E24B132F200E4C2A5 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1659E4D24B132F200E4C2A5 /* HealthData.swift */; };
 		F1659E5124B1468800E4C2A5 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1659E5024B1468800E4C2A5 /* HealthKit.framework */; };
 		F1659E5324B1A1EE00E4C2A5 /* FoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1659E5224B1A1EE00E4C2A5 /* FoodVC.swift */; };
@@ -41,6 +45,10 @@
 		F15F33FB24B6759700C8EE48 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		F15F33FD24B677FB00C8EE48 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F15F33FF24B67A2000C8EE48 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		F15F340124B70AC300C8EE48 /* CalendarTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTVC.swift; sourceTree = "<group>"; };
+		F15F340324B71B4900C8EE48 /* CalenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderVC.swift; sourceTree = "<group>"; };
+		F15F340524B72F1100C8EE48 /* histCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = histCell.swift; sourceTree = "<group>"; };
+		F15F340724B738EA00C8EE48 /* CardUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUIView.swift; sourceTree = "<group>"; };
 		F1659E4D24B132F200E4C2A5 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
 		F1659E4F24B1468700E4C2A5 /* Get Fit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Get Fit.entitlements"; sourceTree = "<group>"; };
 		F1659E5024B1468800E4C2A5 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -119,6 +127,10 @@
 				F1659E5224B1A1EE00E4C2A5 /* FoodVC.swift */,
 				F1659E5424B1A22D00E4C2A5 /* Updater.swift */,
 				F17B307224A7E9D80043F9AE /* Main.storyboard */,
+				F15F340724B738EA00C8EE48 /* CardUIView.swift */,
+				F15F340124B70AC300C8EE48 /* CalendarTVC.swift */,
+				F15F340324B71B4900C8EE48 /* CalenderVC.swift */,
+				F15F340524B72F1100C8EE48 /* histCell.swift */,
 				F1659E5624B2DF0F00E4C2A5 /* ActivityVC.swift */,
 				F1AD3C2624A823DC00AF313E /* home_icon.png */,
 				F17B307824A7E9DC0043F9AE /* Assets.xcassets */,
@@ -255,6 +267,7 @@
 			files = (
 				F17B307124A7E9D80043F9AE /* ViewController.swift in Sources */,
 				F1659E5724B2DF0F00E4C2A5 /* ActivityVC.swift in Sources */,
+				F15F340424B71B4900C8EE48 /* CalenderVC.swift in Sources */,
 				4C2E6D3324B5712F0006536A /* ProfileViewController.swift in Sources */,
 				F15F33FC24B6759700C8EE48 /* History.swift in Sources */,
 				F1659E4E24B132F200E4C2A5 /* HealthData.swift in Sources */,
@@ -264,7 +277,10 @@
 				F17B306D24A7E9D80043F9AE /* AppDelegate.swift in Sources */,
 				F17B307724A7E9D80043F9AE /* Get_Fit.xcdatamodeld in Sources */,
 				F17B306F24A7E9D80043F9AE /* SceneDelegate.swift in Sources */,
+				F15F340224B70AC300C8EE48 /* CalendarTVC.swift in Sources */,
 				4C2E6D2F24B551130006536A /* SettingsViewController.swift in Sources */,
+				F15F340824B738EA00C8EE48 /* CardUIView.swift in Sources */,
+				F15F340624B72F1100C8EE48 /* histCell.swift in Sources */,
 				F15F33FE24B677FB00C8EE48 /* Constant.swift in Sources */,
 				4CCB449324B69771009CFD49 /* LoginViewController.swift in Sources */,
 			);
