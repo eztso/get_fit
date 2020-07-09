@@ -516,7 +516,7 @@
         <!--Login View Controller-->
         <scene sceneID="TU4-qV-IyS">
             <objects>
-                <viewController id="zJG-BC-Kcg" customClass="LoginViewController" customModule="LeeMichael_HW5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zJG-BC-Kcg" customClass="LoginViewController" customModule="Get_Fit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oJT-jd-nIj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -532,6 +532,14 @@
                                     <action selector="onSegmentChange:" destination="zJG-BC-Kcg" eventType="valueChanged" id="yX9-4D-u14"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEH-mZ-cMC">
+                                <rect key="frame" x="193" y="447" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <action selector="skipLoginButtonPressed:" destination="zJG-BC-Kcg" eventType="touchUpInside" id="te7-5W-a5P"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9F7-T9-tcR">
                                 <rect key="frame" x="210" y="173" width="184" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -572,7 +580,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCc-mw-PP4">
-                                <rect key="frame" x="20" y="447" width="374" height="112"/>
+                                <rect key="frame" x="20" y="485" width="374" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -597,6 +605,7 @@
                         <outlet property="loginSegmentControl" destination="VI4-iq-dvq" id="0bE-f1-UyE"/>
                         <outlet property="passwordTextField" destination="M5k-sI-0SK" id="YJP-CM-a55"/>
                         <outlet property="signInButton" destination="X95-Cl-m0O" id="dVU-UR-X3B"/>
+                        <outlet property="skipLoginButton" destination="QEH-mZ-cMC" id="jiZ-xu-RKc"/>
                         <outlet property="statusLabel" destination="TCc-mw-PP4" id="nXR-L0-1o0"/>
                         <outlet property="userNameTextField" destination="9F7-T9-tcR" id="c6i-1N-4QK"/>
                         <segue destination="hPu-vZ-zQ5" kind="show" identifier="LoginSegueIdentifier" id="vIY-UB-zsf"/>

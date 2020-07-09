@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var skipLoginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,7 @@ class LoginViewController: UIViewController {
         else {
             confirmPasswordLabel.isHidden = false
             confirmPasswordTextField.isHidden = false
+            skipLoginButton.isHidden = true
             signInButton.setTitle("Sign Up", for: .normal)
         }
     }
@@ -121,6 +123,9 @@ class LoginViewController: UIViewController {
 //            targetViewController.currentUserId = userNameTextField.text!
 //        }
 //    }
+    @IBAction func skipLoginButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: self.loginSegueIdentifier, sender: nil)
+    }
     
     @IBAction func signInButtonPressed(_ sender: Any) {
         if loginSegmentControl.selectedSegmentIndex == signInIndex {
