@@ -100,6 +100,7 @@
 		F17B306024A7E9D80043F9AE = {
 			isa = PBXGroup;
 			children = (
+				4C6964E324B7774D006D82E8 /* README.md */,
 				F17B306B24A7E9D80043F9AE /* Get Fit */,
 				F17B306A24A7E9D80043F9AE /* Products */,
 				3E2BB20EF80760E2E3574A44 /* Pods */,
@@ -142,7 +143,6 @@
 				F15F33FB24B6759700C8EE48 /* History.swift */,
 				F15F33FF24B67A2000C8EE48 /* Health.swift */,
 				4CCB449224B69771009CFD49 /* LoginViewController.swift */,
-				4C6964E324B7774D006D82E8 /* README.md */,
 			);
 			path = "Get Fit";
 			sourceTree = "<group>";
