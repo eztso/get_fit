@@ -31,6 +31,11 @@ class LoginViewController: UIViewController {
         loginSegmentControl.sendActions(for: UIControl.Event.valueChanged)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -97,7 +102,7 @@ class LoginViewController: UIViewController {
             statusLabel.text = "Passwords do not match"
             return
         }
-        print("hi")
+
         Auth.auth().createUser(withEmail: username, password: password) { user, error in
             if error == nil {
                 Auth.auth().signIn(withEmail: username,
@@ -129,11 +134,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInButtonPressed(_ sender: Any) {
         if loginSegmentControl.selectedSegmentIndex == signInIndex {
-            print("hi1")
             trySignIn()
         }
         else {
-            print("hi2")
             trySignUp()
         }
     }

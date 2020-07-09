@@ -26,6 +26,8 @@ class ProfileViewController: UIViewController {
     
     private var datePicker: UIDatePicker?
     
+    let signOutSegueIdentifier: String = "SignOutSegueIdentifier"
+    
     func formatUIView(view: UIView) {
         view.layer.cornerRadius = 10.0
         view.layer.masksToBounds = true
@@ -129,6 +131,21 @@ class ProfileViewController: UIViewController {
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Email"
         }
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func signOutButtonPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: "Sign-Out", message: "Are you sure you want to sign out?", preferredStyle: UIAlertController.Style.alert)
+
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+            self.performSegue(withIdentifier: self.signOutSegueIdentifier, sender: nil)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
+            (action : UIAlertAction!) -> Void in })
 
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)

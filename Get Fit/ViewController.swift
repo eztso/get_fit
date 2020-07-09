@@ -70,6 +70,7 @@ class ViewController: UIViewController, Updater {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true;
         Constant.healthdata.getTodaysSteps(completion: {(ans) -> Void in
                  DispatchQueue.main.async { () in
                      self.stepsLabel.text! = String(Int(ans))
