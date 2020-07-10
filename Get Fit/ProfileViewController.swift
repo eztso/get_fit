@@ -72,7 +72,7 @@ class ProfileViewController: UIViewController {
                 dobLabel.text = data.value(forKey: "dob") as? String
                 heightLabel.text = data.value(forKey: "height") as? String
                 emailLabel.text = data.value(forKey: "email") as? String
-                var storedImageData = data.value(forKey: "pic")
+                let storedImageData = data.value(forKey: "pic")
                 if storedImageData != nil {
                     profilePicImageView.image = UIImage(data: storedImageData as! Data)
                 }

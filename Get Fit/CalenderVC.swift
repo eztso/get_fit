@@ -30,9 +30,21 @@
                 if indexPath.row < data[sortedMonths[indexPath.section]]!.count {
                     let d = data[sortedMonths[indexPath.section]]![indexPath.row]
                     cell.date.text? = d.date!
+                    
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    let date = dateFormatter.date(from:d.date!)!
+                    
+                    let dateFormat = DateFormatter()
+                    dateFormat.dateFormat = "EEE, MMM d"
+                    cell.date.text? = dateFormat.string(from: date)
                 }
             }
             formatUIView(view: cell)
+            cell.layer.borderColor = Constant.red.cgColor
+            cell.layer.borderWidth = 4
             cell.date.backgroundColor = UIColor.clear
             formatUIView(view: cell.date)
             return cell
@@ -40,7 +52,7 @@
         
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: SectionHeaderHeight))
-            view.backgroundColor = UIColor(red: 253.0/255.0, green: 240.0/255.0, blue: 196.0/255.0, alpha: 1)
+            view.backgroundColor = Constant.green
             let label = UILabel(frame: CGRect(x: 15, y: 0, width: tableView.bounds.width - 30, height: SectionHeaderHeight))
             label.font = UIFont.boldSystemFont(ofSize: 15)
             label.textColor = UIColor.black
