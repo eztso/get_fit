@@ -142,10 +142,16 @@ class DayViewController: UIViewController {
     
     
     func testScrollview() {
+        let myButton = UIButton(type: .system)
+
         contentView.addSubview(linechartView)
         contentView.addSubview(radarChartView)
+        scrollView.addSubview(myButton)
+
         linechartView.translatesAutoresizingMaskIntoConstraints = false
         radarChartView.translatesAutoresizingMaskIntoConstraints = false
+        myButton.translatesAutoresizingMaskIntoConstraints = false
+
         
         linechartView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         linechartView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
@@ -156,24 +162,23 @@ class DayViewController: UIViewController {
         
         radarChartView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         radarChartView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        
+         
         radarChartView.heightAnchor.constraint(equalToConstant: 400).isActive = true
-        radarChartView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        let view = UIView()
-        view.backgroundColor = .white
+        radarChartView.bottomAnchor.constraint(equalTo: myButton.topAnchor).isActive = true
         
         // Create UIButton
-        let myButton = UIButton(type: .system)
+        myButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        myButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        myButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        myButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+
         
-        // Position Button
-        myButton.frame = CGRect(x: 20, y: 20, width: 100, height: 50)
         // Set text on button
         myButton.setTitle("Metrics", for: .normal)
         
         // Set button action
         myButton.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
-        scrollView.addSubview(myButton
-        )
+        
         
         //        linechartView.bottomAnchor.constraint(equalTo: imageView2.topAnchor).isActive = true
         
