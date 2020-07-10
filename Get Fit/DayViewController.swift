@@ -31,7 +31,6 @@ class DayViewController: UIViewController {
         var entries = [ChartDataEntry]()
         for i in 0..<stepsData.count {
             let y_ = stepsData[i]
-            print(i)
             let value = ChartDataEntry(x: Double(i), y : y_)
             entries.append(value)
         }
