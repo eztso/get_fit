@@ -92,8 +92,6 @@
                     data[str]!.append(item)
                     print(data.count)
                 }
-                
-                
             }
             for (k, _)in data {
                 data[k]!.sort( by: { (first: Health, second: Health) -> Bool in
@@ -109,7 +107,7 @@
                 print(i)
             }
             tableView.reloadData()
-            
+            overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
         }
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let destination = segue.destination as? DayViewController,

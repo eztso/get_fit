@@ -53,6 +53,10 @@ class DayViewController: UIViewController {
         testScrollview()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
+    }
+    
     
     func testScrollview() {
       
