@@ -201,6 +201,7 @@ class ProfileViewController: UIViewController {
         
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Date of Birth"
+            textField.keyboardType = .numberPad
         }
 
         alertController.addAction(saveAction)
@@ -221,6 +222,7 @@ class ProfileViewController: UIViewController {
         
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Height"
+            textField.keyboardType = .numberPad
         }
 
         alertController.addAction(saveAction)
