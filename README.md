@@ -5,9 +5,20 @@ Dependencies:
 * iOS 13.2
 * Pods: Alamofire, Firebase
 
+Frameworks Used:
+* Health Kit
+* Multithreading
+* Local Notifications
+* Firebase
+* User Defaults
+* Charts
+* Core Data
+* Calender (dates)
+
 Special Instructions:
 * You'll probably need to run pod init && pod install
 * Upon opening the app give permission to HealthKit and allow notifications
+* You can create an account or log in as guest. All guest data is shared across sessions with other guests.
 
 General Notes:
 * Local notifications are set to trigger at 12pm every day with different messages based on number of steps taken.
