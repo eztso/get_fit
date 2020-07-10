@@ -79,7 +79,7 @@ class DayViewController: UIViewController {
                 let value = ChartDataEntry(x: Double(i), y : y_)
                 entries3.append(value)
             }
-        let radar2data = RadarChartDataSet(entries: entries3, label: "Diet")
+        let radar2data = RadarChartDataSet(entries: entries3, label: "")
                radar2data.colors = [Constant.green]
                radar2data.fillColor = Constant.green_trans
                radar2data.drawFilledEnabled = true
