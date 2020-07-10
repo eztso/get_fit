@@ -68,10 +68,14 @@ class ProfileViewController: UIViewController {
         do {
             let result = try managedContext.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
-                nameLabel.text = (data.value(forKey: "name") as! String)
+                nameLabel.text = (data.value(forKey: "name") as? String)
                 dobLabel.text = data.value(forKey: "dob") as? String
                 heightLabel.text = data.value(forKey: "height") as? String
                 emailLabel.text = data.value(forKey: "email") as? String
+                var storedImageData = data.value(forKey: "pic")
+                if storedImageData != nil {
+                    profilePicImageView.image = UIImage(data: storedImageData as! Data)
+                }
             }
         }catch {
             print("Failed")
@@ -81,6 +85,47 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
+    }
+    
+    func userProfilePicUpdate(key: String, newVal: Data?) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ProfileEntity")
+
+        let predicate = NSPredicate(format: "user = %@", Constant.currentUser)
+        fetchRequest.predicate = predicate
+        
+        do {
+            let result = try context.fetch(fetchRequest) as! [NSManagedObject]
+            if result.isEmpty {
+                let person = NSEntityDescription.insertNewObject(
+                    forEntityName: "ProfileEntity", into:context)
+                
+                // Set the attribute values
+                person.setValue(newVal, forKey: key)
+                person.setValue(Constant.currentUser, forKey: "user")
+                do {
+                    try context.save()
+                    
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            }
+            else {
+                let person: NSManagedObject = result[0]
+                person.setValue(newVal, forKey: key)
+                do {
+                    try context.save()
+                    
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            }
+        }catch {
+            
+            print("Failed")
+        }
     }
     
     func userProfileUpdate(key: String, newVal: String) {
@@ -218,5 +263,31 @@ class ProfileViewController: UIViewController {
         alertController.addAction(cancelAction)
 
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func uploadImagePicked(_ sender: Any) {
+        ImagePickerManager().pickImage(self){ image in
+            self.userProfilePicUpdate(key: "pic", newVal: image.pngData())
+        }
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+         
+         //We need to create a context from this container
+         let managedContext = appDelegate.persistentContainer.viewContext
+         
+         //Prepare the request of type NSFetchRequest  for the entity
+         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ProfileEntity")
+
+         let predicate = NSPredicate(format: "user = %@", Constant.currentUser)
+         fetchRequest.predicate = predicate
+
+         do {
+             let result = try managedContext.fetch(fetchRequest)
+             for data in result as! [NSManagedObject] {
+                profilePicImageView.image = UIImage(data: data.value(forKey: "pic") as! Data)
+             }
+         }catch {
+             print("Failed")
+         }
     }
 }

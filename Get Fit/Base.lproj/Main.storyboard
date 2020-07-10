@@ -408,6 +408,9 @@
                                 <rect key="frame" x="273" y="279" width="45" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="camera" catalog="system"/>
+                                <connections>
+                                    <action selector="uploadImagePicked:" destination="7N5-km-zSR" eventType="touchUpInside" id="VHa-wj-lK6"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mlp-Co-UJ2">
                                 <rect key="frame" x="27" y="341" width="374" height="66"/>
