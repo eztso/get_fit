@@ -42,13 +42,16 @@ class DayViewController: UIViewController {
         
         line1.lineWidth = 2
         
-        var entries2 = [ChartDataEntry]()
-        let val = ChartDataEntry(x: 0.0, y : Double(Constant.recSteps))
-        let line2 = LineChartDataSet(entries: entries2, label: "Recommended")
+        var entries_b = [ChartDataEntry]()
+        entries_b.append(ChartDataEntry(x: 0.0, y : Double(Constant.recSteps)))
+        entries_b.append(ChartDataEntry(x: 23.0, y : Double(Constant.recSteps)))
+
+        let line2 = LineChartDataSet(entries: entries_b, label: "Recommended")
         line2.colors = [Constant.green]
         
         
-        line1.lineWidth = 2
+        line2.lineWidth = 2
+        line2.drawCirclesEnabled = false
         
         let xAxis = linechartView.xAxis
         xAxis.xOffset = 10
@@ -58,6 +61,7 @@ class DayViewController: UIViewController {
         
         let data = LineChartData()
         data.addDataSet(line1)
+        data.addDataSet(line2)
         linechartView.data = data
         linechartView.chartDescription?.text = "Step Count(24 hr)"
         
