@@ -40,7 +40,7 @@ class DayViewController: UIViewController {
         line1.circleHoleColor = Constant.green
         line1.setCircleColors(Constant.blue)
         
-        
+        line1.lineWidth = 2
         let xAxis = linechartView.xAxis
         xAxis.xOffset = 10
         xAxis.labelFont = .systemFont(ofSize: 9, weight: .bold)
@@ -63,7 +63,7 @@ class DayViewController: UIViewController {
         
         
         
-        let radar1data = RadarChartDataSet(entries: entries2, label: "Diet")
+        let radar1data = RadarChartDataSet(entries: entries2, label: "You")
         radar1data.colors = [Constant.red]
         radar1data.fillColor = Constant.red_trans
         radar1data.drawFilledEnabled = true
@@ -78,7 +78,7 @@ class DayViewController: UIViewController {
                 let value = ChartDataEntry(x: Double(i), y : y_)
                 entries3.append(value)
             }
-        let radar2data = RadarChartDataSet(entries: entries3, label: "")
+        let radar2data = RadarChartDataSet(entries: entries3, label: "Recommended")
                radar2data.colors = [Constant.green]
                radar2data.fillColor = Constant.green_trans
                radar2data.drawFilledEnabled = true
@@ -89,7 +89,7 @@ class DayViewController: UIViewController {
         let r_xAxis = radarChartView.xAxis
         r_xAxis.labelFont = .systemFont(ofSize: 9, weight: .bold)
         r_xAxis.labelFont = .systemFont(ofSize: 9, weight: .bold)
-        r_xAxis.labelTextColor = .black
+        
         r_xAxis.xOffset = 10
         r_xAxis.yOffset = 10
         r_xAxis.valueFormatter = XAxisFormatter()
@@ -113,13 +113,10 @@ class DayViewController: UIViewController {
         let yAxis = radarChartView.yAxis
         yAxis.labelFont = .systemFont(ofSize: 9, weight: .light)
         yAxis.labelCount = 6
-        yAxis.drawTopYLabelEntryEnabled = false
         yAxis.axisMinimum = 0
         yAxis.valueFormatter = YAxisFormatter()
         
         // 5
-        radarChartView.rotationEnabled = false
-        radarChartView.legend.enabled = false
         
         
         testScrollview()
@@ -131,24 +128,24 @@ class DayViewController: UIViewController {
     
     
     func testScrollview() {
-        
         contentView.addSubview(linechartView)
         contentView.addSubview(radarChartView)
         linechartView.translatesAutoresizingMaskIntoConstraints = false
-        linechartView.translatesAutoresizingMaskIntoConstraints = false
-        
+        radarChartView.translatesAutoresizingMaskIntoConstraints = false
+
         linechartView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         linechartView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        linechartView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+        linechartView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         linechartView.heightAnchor.constraint(equalToConstant: 400).isActive = true
-        radarChartView.translatesAutoresizingMaskIntoConstraints = false
-        radarChartView.translatesAutoresizingMaskIntoConstraints = false
+        linechartView.bottomAnchor.constraint(equalTo: radarChartView.topAnchor).isActive = true
+
         
         radarChartView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         radarChartView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        radarChartView.topAnchor.constraint(equalTo: linechartView.bottomAnchor, constant: 5).isActive = true
-        radarChartView.topAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+       
         radarChartView.heightAnchor.constraint(equalToConstant: 400).isActive = true
+        radarChartView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+
         
         
         //        linechartView.bottomAnchor.constraint(equalTo: imageView2.topAnchor).isActive = true
@@ -222,6 +219,6 @@ class XAxisFormatter: IAxisValueFormatter {
 class YAxisFormatter: IAxisValueFormatter {
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        "\(Int(value)) $"
+        "\(Int(value)) (g)"
     }
 }
