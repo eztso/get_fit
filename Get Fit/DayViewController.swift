@@ -31,10 +31,11 @@ class DayViewController: UIViewController {
         var entries = [ChartDataEntry]()
         for i in 0..<stepsData.count {
             let y_ = stepsData[i]
+            print(i)
             let value = ChartDataEntry(x: Double(i), y : y_)
             entries.append(value)
         }
-        let line1 = LineChartDataSet(entries: entries, label: "Number")
+        let line1 = LineChartDataSet(entries: entries, label: "Steps")
         line1.colors = [Constant.red]
         line1.circleHoleColor = Constant.green
         line1.setCircleColors(Constant.blue)
@@ -43,6 +44,8 @@ class DayViewController: UIViewController {
         let xAxis = linechartView.xAxis
         xAxis.xOffset = 10
         xAxis.labelFont = .systemFont(ofSize: 9, weight: .bold)
+        xAxis.valueFormatter = XAxisFormatterLinePlot()
+       
         
         let data = LineChartData()
         data.addDataSet(line1)
@@ -89,6 +92,14 @@ class DayViewController: UIViewController {
         
         
     }
+    
+    class XAxisFormatterLinePlot: IAxisValueFormatter {
+               
+               
+               func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+                   String(Int(value))
+               }
+           }
     /*
      // MARK: - Navigation
      
