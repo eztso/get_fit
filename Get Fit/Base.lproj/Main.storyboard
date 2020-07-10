@@ -323,6 +323,7 @@
                     <connections>
                         <outlet property="contentView" destination="0Ec-4h-Ort" id="F6z-Yk-JQd"/>
                         <outlet property="scrollView" destination="RIP-1f-3gj" id="zHV-rd-Tnl"/>
+                        <segue destination="Nb2-d1-ySH" kind="show" identifier="MetricsSegueIdentifier" id="Cg2-ws-1ni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ug-HT-HN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -834,45 +835,6 @@
             </objects>
             <point key="canvasLocation" x="-539.13043478260875" y="961.60714285714278"/>
         </scene>
-        <!--Day View Controller-->
-        <scene sceneID="wM9-jT-dSC">
-            <objects>
-                <viewController id="Mqh-b1-Ark" customClass="DayViewController" customModule="Get_Fit" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Hgl-7o-TCc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2px-tS-27r">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="54r-Zf-pWk"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="Ax8-xd-RQE"/>
-                            </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96t-cv-ZKW">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="96t-cv-ZKW" firstAttribute="leading" secondItem="54r-Zf-pWk" secondAttribute="leading" id="Cv5-Ja-TJt"/>
-                            <constraint firstItem="2px-tS-27r" firstAttribute="top" secondItem="Im1-7Q-vsb" secondAttribute="top" id="IsF-mM-q1Y"/>
-                            <constraint firstItem="96t-cv-ZKW" firstAttribute="bottom" secondItem="54r-Zf-pWk" secondAttribute="bottom" id="TQH-lV-f1G"/>
-                            <constraint firstItem="2px-tS-27r" firstAttribute="trailing" secondItem="Im1-7Q-vsb" secondAttribute="trailing" id="X2f-4f-WrC"/>
-                            <constraint firstItem="96t-cv-ZKW" firstAttribute="width" secondItem="Ax8-xd-RQE" secondAttribute="width" id="YoG-gk-BDY"/>
-                            <constraint firstItem="2px-tS-27r" firstAttribute="leading" secondItem="Im1-7Q-vsb" secondAttribute="leading" id="bRA-IG-hzf"/>
-                            <constraint firstItem="96t-cv-ZKW" firstAttribute="trailing" secondItem="54r-Zf-pWk" secondAttribute="trailing" id="ei2-xn-TJ4"/>
-                            <constraint firstItem="96t-cv-ZKW" firstAttribute="top" secondItem="54r-Zf-pWk" secondAttribute="top" id="h2B-Jl-zB0"/>
-                            <constraint firstItem="2px-tS-27r" firstAttribute="bottom" secondItem="Im1-7Q-vsb" secondAttribute="bottom" id="n2a-lp-sRE"/>
-                            <constraint firstItem="96t-cv-ZKW" firstAttribute="height" secondItem="Ax8-xd-RQE" secondAttribute="height" id="yvG-bl-E1m"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Im1-7Q-vsb"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="zco-pp-QPC"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wmi-td-4TK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1488" y="1795"/>
-        </scene>
         <!--Past Day Review View Controller-->
         <scene sceneID="tP0-yU-BVu">
             <objects>
@@ -882,7 +844,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWJ-Cf-fXF">
-                                <rect key="frame" x="20" y="350" width="374" height="58"/>
+                                <rect key="frame" x="20" y="427" width="374" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
@@ -891,7 +853,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-py-KMa">
-                                <rect key="frame" x="20" y="427" width="374" height="58"/>
+                                <rect key="frame" x="20" y="504" width="374" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
@@ -899,26 +861,8 @@
                                     <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9N-Rm-4Wg">
-                                <rect key="frame" x="20" y="503" width="374" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
-                                <state key="normal" title="You walked 1 mile!">
-                                    <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r4-qm-cQE">
-                                <rect key="frame" x="20" y="581" width="374" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
-                                <state key="normal" title="You weighed 123 lb!">
-                                    <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RaP-uU-IJS" customClass="CardUIView" customModule="Get_Fit" customModuleProvider="target">
-                                <rect key="frame" x="20" y="71" width="374" height="178"/>
+                                <rect key="frame" x="20" y="148" width="374" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wed, Jul 8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlX-D4-PTd">
@@ -945,23 +889,31 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r4-qm-cQE">
+                                <rect key="frame" x="20" y="586" width="374" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
+                                <state key="normal" title="You weighed 123 lb!">
+                                    <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="kwX-19-M34"/>
                     </view>
+                    <navigationItem key="navigationItem" id="BW5-gT-zjH"/>
                     <connections>
                         <outlet property="bmiLabel" destination="res-fd-NLp" id="urJ-rk-bj8"/>
                         <outlet property="calorieLabel" destination="lKv-py-KMa" id="kSf-Z2-lne"/>
-                        <outlet property="caloriesLabel" destination="lKv-py-KMa" id="YG1-U8-sv0"/>
                         <outlet property="dateLabel" destination="RaP-uU-IJS" id="a0e-rh-yyW"/>
-                        <outlet property="distanceLabel" destination="A9N-Rm-4Wg" id="NuS-b6-go1"/>
                         <outlet property="stepsLabel" destination="iWJ-Cf-fXF" id="srS-R4-VPI"/>
                         <outlet property="weightLabel" destination="0r4-qm-cQE" id="o6E-gZ-7xu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSd-h0-uKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-391" y="1795"/>
+            <point key="canvasLocation" x="567" y="2479"/>
         </scene>
     </scenes>
     <resources>

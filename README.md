@@ -30,6 +30,7 @@ General Notes:
 * Pedometer is set to increment the steps taken label on the home screen based on pedometer data provided by healthkit. However on simulator there is no way to programmatically trigger this. You can load the app on your actual phone to see this in action
 * Settings page details: Notifications - enables/disables notifications, Dark mode - enables/disables dark mode, Data retention - if disabled we will delete the user's data after 90 days
 * All health data is stored using core data and is associated with a specific user account
+* On our first daily view controller with the charts, you can scroll down slightly to see the button to the next view controller
 
 Changes From Proposal:
 * We found that having a grid-style calender view was very difficult to working due to the number of edge cases and day layout. Ultimately we compromised to retain the ability to access all past days by instead implementing the calender as a scrolling table of dates sorted in chronological order.

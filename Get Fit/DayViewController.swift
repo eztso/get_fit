@@ -185,10 +185,30 @@ class DayViewController: UIViewController {
         self.contentView.setNeedsLayout()
     }
     
+    let metricsSegueIdentifier: String = "MetricsSegueIdentifier"
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        // If we are changing text, we want to pass the default
+        // value of the input text field
+        if segue.identifier == metricsSegueIdentifier, let targetViewController = segue.destination as? PastDayReviewViewController {
+            targetViewController.health = self.health
+            var steps: Double = 0.0
+            for step in self.stepsData {
+                steps += step
+            }
+            targetViewController.steps = steps
+        }
+    }
+    
     @objc func buttonAction(_ sender:UIButton!)
     {
-        print("Button tapped")
+        self.performSegue(withIdentifier: metricsSegueIdentifier, sender: nil)
     }
+    
     func getLineChartData() {
         self.stepsData = []
         var s1 = Calendar.current.startOfDay(for: date!)
