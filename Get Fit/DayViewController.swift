@@ -144,6 +144,11 @@ class DayViewController: UIViewController {
     func testScrollview() {
         let myButton = UIButton(type: .system)
 
+        myButton.backgroundColor = UIColor.black
+        myButton.layer.cornerRadius = 10.0
+        myButton.layer.masksToBounds = true
+        myButton.setTitleColor(Constant.red, for: .normal)
+        
         contentView.addSubview(linechartView)
         contentView.addSubview(radarChartView)
         scrollView.addSubview(myButton)
