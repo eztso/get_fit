@@ -22,9 +22,6 @@ class ActivityVC: UIViewController {
                 self.steps = Int(steps!)
                 Constant.healthdata.setTodaysSteps(steps: steps!)
                 self.stepsOutlet.setTitle("Steps: " + String(self.steps!), for: .normal)
-                
-
-
             })
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
                 (action : UIAlertAction!) -> Void in })

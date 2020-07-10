@@ -38,6 +38,8 @@ class ViewController: UIViewController, Updater {
     @IBOutlet weak var challengeLabel: UILabel!
     
     @IBOutlet weak var challengeOutlet: UIButton!
+    @IBOutlet weak var challengeViewOutlet: UIView!
+    
     @IBAction func onChallengeButtonPressed(_ sender: Any) {
         Constant.healthdata.setTodaysChallenge(ch: challenge!.idx)
         challengeOutlet.isHidden = true
@@ -136,6 +138,7 @@ class ViewController: UIViewController, Updater {
         formatUIView(view: weightButton)
         formatUIView(view: foodButton)
         formatUIView(view: activityButton)
+        formatUIView(view: challengeViewOutlet)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -172,7 +175,8 @@ class ViewController: UIViewController, Updater {
             challengeLabel.text = challenge!.descriptions[challenge!.idx]
             if (challenge!.checkCompletion()) {
                 challenge!.idx = -2
-                challengeLabel.text! = "completed todays challenge"
+                challengeLabel.text! = "Challenge completed"
+                challengeLabel.numberOfLines = 0
                 Constant.healthdata.addPoints()
                 
             }

@@ -145,6 +145,7 @@
                         <outlet property="cardView" destination="hb3-jx-cOE" id="anx-Vm-UKn"/>
                         <outlet property="challengeLabel" destination="IfO-Ji-Bqw" id="nCL-tT-aAk"/>
                         <outlet property="challengeOutlet" destination="4rh-Qe-DM9" id="7ur-Mz-P1A"/>
+                        <outlet property="challengeViewOutlet" destination="Fm0-Ld-KXV" id="M9Q-ZA-yfP"/>
                         <outlet property="foodButton" destination="G61-mR-qye" id="Efw-n2-bac"/>
                         <outlet property="weightButton" destination="WpD-Ac-oXG" id="3Pf-z3-DGC"/>
                     </connections>
