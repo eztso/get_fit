@@ -27,6 +27,7 @@
                 if indexPath.row < data[sortedMonths[indexPath.section]]!.count {
                     print("in cell for row at")
                     let d = data[sortedMonths[indexPath.section]]![indexPath.row]
+                    print("section" + String(indexPath.section) + "row" + String(indexPath.row))
                     cell.date.text? = d.date!
                 }
                 
@@ -113,12 +114,15 @@
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let destination = segue.destination as? DayViewController,
                 let row = tableView.indexPathForSelectedRow?.row, let section = tableView.indexPathForSelectedRow?.section{
+                 print("section" + String(section) + "row" + String(row))
                 let df = DateFormatter()
+                df.dateFormat = "yyyy-MM-dd"
                 let d = df.date(from: data[sortedMonths[section]]![row].date!)
+                
                 destination.date = d
             }
+            
         }
-        
     }
     
     
