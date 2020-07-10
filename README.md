@@ -16,13 +16,20 @@ Frameworks Used:
 * Calender (dates)
 
 Special Instructions:
-* You'll probably need to run pod init && pod install
+* You need to open the 'Get Fit.xcworkspace file'
+* You'll probably need to run pod init && pod install in the root directory where the pod file is located
+* Use an IPhone 11 Pro Max simulator
 * Upon opening the app give permission to HealthKit and allow notifications
 * You can create an account or log in as guest. All guest data is shared across sessions with other guests.
+    * If you don't want to create an account you can use this test account
+    * Email: test@test.com
+    * Pw: testing
 
 General Notes:
-* Local notifications are set to trigger at 12pm every day with different messages based on number of steps taken.
-* Pedometer is set to increment the steps taken label on the home screen based on pedometer data provided by healthkit. However on simulator there is no way to programmatically trigger this
+* Local notifications are set to trigger at 12pm every day with different messages based on number of steps taken (if notifications are enabled).
+* Pedometer is set to increment the steps taken label on the home screen based on pedometer data provided by healthkit. However on simulator there is no way to programmatically trigger this. You can load the app on your actual phone to see this in action
+* Settings page details: Notifications - enables/disables notifications, Dark mode - enables/disables dark mode, Data retention - if disabled we will delete the user's data after 90 days
+* All health data is stored using core data and is associated with a specific user account
 
 Changes From Proposal:
 * We found that having a grid-style calender view was very difficult to working due to the number of edge cases and day layout. Ultimately we compromised to retain the ability to access all past days by instead implementing the calender as a scrolling table of dates sorted in chronological order.
