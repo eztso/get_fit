@@ -41,6 +41,15 @@ class DayViewController: UIViewController {
         line1.setCircleColors(Constant.blue)
         
         line1.lineWidth = 2
+        
+        var entries2 = [ChartDataEntry]()
+        let val = ChartDataEntry(x: 0.0, y : Double(Constant.recSteps))
+        let line2 = LineChartDataSet(entries: entries2, label: "Recommended")
+        line2.colors = [Constant.green]
+        
+        
+        line1.lineWidth = 2
+        
         let xAxis = linechartView.xAxis
         xAxis.xOffset = 10
         xAxis.labelFont = .systemFont(ofSize: 9, weight: .bold)
@@ -70,20 +79,20 @@ class DayViewController: UIViewController {
         radar1data.lineWidth = 2
         radar1data.valueFormatter = DataSetValueFormatter()
         var entries3 = [ChartDataEntry]()
-
+        
         let temp2 : [Double] = [83.0, 63.0, 40.0]
-            for i in 0..<temp.count  {
-                let y_ = temp2[i]
-                print(i)
-                let value = ChartDataEntry(x: Double(i), y : y_)
-                entries3.append(value)
-            }
+        for i in 0..<temp.count  {
+            let y_ = temp2[i]
+            print(i)
+            let value = ChartDataEntry(x: Double(i), y : y_)
+            entries3.append(value)
+        }
         let radar2data = RadarChartDataSet(entries: entries3, label: "Recommended")
-               radar2data.colors = [Constant.green]
-               radar2data.fillColor = Constant.green_trans
-               radar2data.drawFilledEnabled = true
-               radar2data.lineWidth = 2
-               radar2data.valueFormatter = DataSetValueFormatter()
+        radar2data.colors = [Constant.green]
+        radar2data.fillColor = Constant.green_trans
+        radar2data.drawFilledEnabled = true
+        radar2data.lineWidth = 2
+        radar2data.valueFormatter = DataSetValueFormatter()
         
         
         let r_xAxis = radarChartView.xAxis
@@ -132,20 +141,20 @@ class DayViewController: UIViewController {
         contentView.addSubview(radarChartView)
         linechartView.translatesAutoresizingMaskIntoConstraints = false
         radarChartView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         linechartView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         linechartView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         linechartView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         linechartView.heightAnchor.constraint(equalToConstant: 400).isActive = true
         linechartView.bottomAnchor.constraint(equalTo: radarChartView.topAnchor).isActive = true
-
+        
         
         radarChartView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         radarChartView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-       
+        
         radarChartView.heightAnchor.constraint(equalToConstant: 400).isActive = true
         radarChartView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-
+        
         
         
         //        linechartView.bottomAnchor.constraint(equalTo: imageView2.topAnchor).isActive = true
@@ -155,6 +164,7 @@ class DayViewController: UIViewController {
     }
     
     func getLineChartData() {
+        self.stepsData = []
         var s1 = Calendar.current.startOfDay(for: date!)
         var s2 = s1 + 60 * 60
         let end = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: date!)!
@@ -170,6 +180,8 @@ class DayViewController: UIViewController {
             s2 = s1 + 60 * 60
             
         }
+        self.stepsData = self.stepsData
+            .reduce(into: []) { $0.append(($0.last ?? 0) + $1) }
         
         
     }

@@ -238,6 +238,29 @@
                                             <segue destination="KQc-EL-oUi" kind="show" id="ssX-UE-Muf"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpecialCell" rowHeight="85" id="fh9-nf-XXs" customClass="histCell" customModule="Get_Fit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="113" width="414" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fh9-nf-XXs" id="g2K-pU-4Zl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7j-lF-W4B">
+                                                    <rect key="frame" x="20" y="11" width="374" height="69"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="date" destination="v7j-lF-W4B" id="GLW-hB-2lZ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -304,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ug-HT-HN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="369.56521739130437" y="1741.7410714285713"/>
+            <point key="canvasLocation" x="567" y="1795"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="1lu-8b-f26">
@@ -808,6 +831,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFf-qQ-7Qq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-539.13043478260875" y="961.60714285714278"/>
+        </scene>
+        <!--Day View Controller-->
+        <scene sceneID="wM9-jT-dSC">
+            <objects>
+                <viewController id="Mqh-b1-Ark" customClass="DayViewController" customModule="Get_Fit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hgl-7o-TCc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2px-tS-27r">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96t-cv-ZKW">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="96t-cv-ZKW" firstAttribute="trailing" secondItem="54r-Zf-pWk" secondAttribute="trailing" id="6qz-pr-FMo"/>
+                                    <constraint firstItem="96t-cv-ZKW" firstAttribute="top" secondItem="54r-Zf-pWk" secondAttribute="top" id="79z-cO-XUf"/>
+                                    <constraint firstItem="96t-cv-ZKW" firstAttribute="leading" secondItem="54r-Zf-pWk" secondAttribute="leading" id="L3u-hJ-3H3"/>
+                                    <constraint firstItem="96t-cv-ZKW" firstAttribute="bottom" secondItem="54r-Zf-pWk" secondAttribute="bottom" id="LEA-ve-HIo"/>
+                                    <constraint firstItem="96t-cv-ZKW" firstAttribute="width" secondItem="Ax8-xd-RQE" secondAttribute="width" id="X4E-9A-wzM"/>
+                                    <constraint firstItem="96t-cv-ZKW" firstAttribute="height" secondItem="Ax8-xd-RQE" secondAttribute="height" priority="250" id="Xzw-fs-7qa"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="54r-Zf-pWk"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Ax8-xd-RQE"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2px-tS-27r" firstAttribute="top" secondItem="Im1-7Q-vsb" secondAttribute="top" id="IsF-mM-q1Y"/>
+                            <constraint firstItem="2px-tS-27r" firstAttribute="trailing" secondItem="Im1-7Q-vsb" secondAttribute="trailing" id="X2f-4f-WrC"/>
+                            <constraint firstItem="2px-tS-27r" firstAttribute="leading" secondItem="Im1-7Q-vsb" secondAttribute="leading" id="bRA-IG-hzf"/>
+                            <constraint firstItem="2px-tS-27r" firstAttribute="bottom" secondItem="Im1-7Q-vsb" secondAttribute="bottom" id="n2a-lp-sRE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Im1-7Q-vsb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zco-pp-QPC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wmi-td-4TK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-359" y="1770"/>
         </scene>
     </scenes>
     <resources>

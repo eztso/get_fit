@@ -34,6 +34,7 @@
 		F1AD3C2724A823DD00AF313E /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F1AD3C2624A823DC00AF313E /* home_icon.png */; };
 		F1E1C48E24B762AD003B51AA /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1C48D24B762AD003B51AA /* Challenge.swift */; };
 		F1E1C49024B7AE94003B51AA /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1C48F24B7AE94003B51AA /* DayViewController.swift */; };
+		F1E1C49324B80CAC003B51AA /* MetricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E1C49224B80CAC003B51AA /* MetricViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		F1AD3C2624A823DC00AF313E /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = SOURCE_ROOT; };
 		F1E1C48D24B762AD003B51AA /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		F1E1C48F24B7AE94003B51AA /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
+		F1E1C49224B80CAC003B51AA /* MetricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				F17B307524A7E9D80043F9AE /* Get_Fit.xcdatamodeld */,
 				F1659E4D24B132F200E4C2A5 /* HealthData.swift */,
 				F15F33FD24B677FB00C8EE48 /* Constant.swift */,
+				F1E1C49224B80CAC003B51AA /* MetricViewController.swift */,
 				4C2E6D2E24B551130006536A /* SettingsViewController.swift */,
 				4C2E6D3224B5712F0006536A /* ProfileViewController.swift */,
 				F15F33FB24B6759700C8EE48 /* History.swift */,
@@ -289,6 +292,7 @@
 				F17B307724A7E9D80043F9AE /* Get_Fit.xcdatamodeld in Sources */,
 				F17B306F24A7E9D80043F9AE /* SceneDelegate.swift in Sources */,
 				4C2E6D2F24B551130006536A /* SettingsViewController.swift in Sources */,
+				F1E1C49324B80CAC003B51AA /* MetricViewController.swift in Sources */,
 				F15F340824B738EA00C8EE48 /* CardUIView.swift in Sources */,
 				F15F340624B72F1100C8EE48 /* histCell.swift in Sources */,
 				F15F33FE24B677FB00C8EE48 /* Constant.swift in Sources */,
