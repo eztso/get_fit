@@ -12,12 +12,9 @@
         @IBOutlet weak var tableView: UITableView!
         let SectionHeaderHeight: CGFloat = 25
         func numberOfSections(in tableView: UITableView) -> Int {
-            print(data.count)
             return data.count
         }
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            print("in number of rows in section")
-            print(data[sortedMonths[section]]!.count)
             return data[sortedMonths[section]]!.count
         }
         
@@ -25,9 +22,7 @@
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! histCell
             if indexPath.section < sortedMonths.count {
                 if indexPath.row < data[sortedMonths[indexPath.section]]!.count {
-                    print("in cell for row at")
                     let d = data[sortedMonths[indexPath.section]]![indexPath.row]
-                    print("section" + String(indexPath.section) + "row" + String(indexPath.row))
                     cell.date.text? = d.date!
                 }
                 
@@ -73,15 +68,11 @@
         
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
-            print("appeared")
             data = [String: [Health]]()
             for item in Constant.healthdata.history.dailyHealth {
-                print(item.date!)
-                print(item.isValid)
                 let df = DateFormatter()
                 df.dateFormat = "yyyy-MM-dd"
                 if item.isValid {
-                    print(item.date!)
                     let d = df.date(from: item.date!)
                     let df2 = DateFormatter()
                     df2.dateFormat = "yyyy-MM"
@@ -90,10 +81,7 @@
                         data[str] = []
                     }
                     data[str]!.append(item)
-                    print(data.count)
                 }
-                
-                
             }
             for (k, _)in data {
                 data[k]!.sort( by: { (first: Health, second: Health) -> Bool in
@@ -105,16 +93,12 @@
             sortedMonths = Array(data.keys).sorted(by: { (k1, k2) -> Bool in
                 k1 < k2
             })
-            for i in sortedMonths {
-                print(i)
-            }
             tableView.reloadData()
-            
+            overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
         }
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let destination = segue.destination as? DayViewController,
                 let row = tableView.indexPathForSelectedRow?.row, let section = tableView.indexPathForSelectedRow?.section{
-                 print("section" + String(section) + "row" + String(row))
                 let df = DateFormatter()
                 df.dateFormat = "yyyy-MM-dd"
                 let d = df.date(from: data[sortedMonths[section]]![row].date!)

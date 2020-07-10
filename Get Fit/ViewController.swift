@@ -60,6 +60,7 @@ class ViewController: UIViewController, Updater {
             (action : UIAlertAction!) -> Void in })
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Weight"
+            textField.keyboardType = .numberPad
         }
         
         alertController.addAction(saveAction)
@@ -129,9 +130,7 @@ class ViewController: UIViewController, Updater {
         // Do any additional setup after loading the view.
         cardView.roundCorners()
         Constant.healthdata.getTodaysSteps(completion: {(ans) -> Void in
-            print(ans)
             DispatchQueue.main.async { () in
-                print("steps" + String(ans))
                 self.cardView.stepsTaken.text! = String(Int(ans))
             }
 
@@ -150,7 +149,6 @@ class ViewController: UIViewController, Updater {
                  DispatchQueue.main.async { () in
                      self.cardView.stepsTaken.text! = String(Int(ans))
                     if Int(ans) > Constant.recSteps {
-                        print("update color")
                         self.cardView.borderColor = Constant.green
                      
                       
@@ -192,7 +190,7 @@ class ViewController: UIViewController, Updater {
         }
         challengeLabel.numberOfLines = 0
             
-        overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
+        overrideUserInterfaceStyle =  UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
       
         var t = ""
         if Constant.healthdata.getHealthForDay().weight == 0  {

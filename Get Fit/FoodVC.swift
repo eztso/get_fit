@@ -29,6 +29,7 @@ class FoodVC: UIViewController {
             (action : UIAlertAction!) -> Void in })
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Sugar"
+            textField.keyboardType = .numberPad
         }
         
         alertController.addAction(saveAction)
@@ -49,6 +50,7 @@ class FoodVC: UIViewController {
             (action : UIAlertAction!) -> Void in })
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Calories (g)"
+            textField.keyboardType = .numberPad
         }
         
         alertController.addAction(saveAction)
@@ -69,6 +71,7 @@ class FoodVC: UIViewController {
             (action : UIAlertAction!) -> Void in })
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Protein (g)"
+            textField.keyboardType = .numberPad
         }
         
         alertController.addAction(saveAction)
@@ -89,6 +92,7 @@ class FoodVC: UIViewController {
             (action : UIAlertAction!) -> Void in })
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Fat"
+            textField.keyboardType = .numberPad
         }
         
         alertController.addAction(saveAction)

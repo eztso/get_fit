@@ -27,6 +27,7 @@ class ActivityVC: UIViewController {
                 (action : UIAlertAction!) -> Void in })
             alertController.addTextField { (textField : UITextField!) -> Void in
                 textField.placeholder = String(self.steps!) + " steps"
+                textField.keyboardType = .numberPad
             }
             
             alertController.addAction(saveAction)
@@ -50,6 +51,7 @@ class ActivityVC: UIViewController {
                        (action : UIAlertAction!) -> Void in })
                    alertController.addTextField { (textField : UITextField!) -> Void in
                        textField.placeholder = String(self.miles!) + "miles"
+                       textField.keyboardType = .numberPad
                    }
                    
                    alertController.addAction(saveAction)

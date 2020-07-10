@@ -34,20 +34,14 @@ class CardUIView: UIView {
     }
     @IBInspectable var borderColor: UIColor = UIColor(red: 0.96, green: 0.56, blue: 0.56, alpha: 1.00) {
         didSet {
-            print("actually update color")
-            print(borderColor)
-            
             self.layer.borderColor = borderColor.cgColor
             self.stepsTaken.textColor = borderColor
             self.arrow.tintColor = borderColor
             self.titleLabel.textColor = borderColor
             if (borderColor == Constant.green) {
-                print(self.arrow.image!)
                 let symbol = UIImage(systemName: "arrow.up.circle")
                     self.arrow.image = symbol
             }
-            print(self.layer.borderColor)
-            
         }
     }
     func roundCorners() {

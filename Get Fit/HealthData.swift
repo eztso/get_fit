@@ -54,7 +54,6 @@ class HealthData {
         
         formatter.dateFormat = "yyyy-MM-dd"
         let dateString = formatter.string(from: Date())
-        print(dateString)
         
         if history.dailyHealth[0].date != dateString {
             for i in 0..<history.dailyHealth.count-1 {
@@ -299,7 +298,6 @@ class HealthData {
                 if val != nil {
                     str = val as! String
                 }
-                print(str)
                 return Double(str )!
             }
         }catch {
@@ -312,9 +310,6 @@ class HealthData {
         return history.points
     }
     func getBMI() -> Double {
-        print("boof" + String(703.0 * getHealthForDay().weight!))
-        print("res" + String((703.0 * getHealthForDay().weight!) / pow(getHeight() / 2.54, 2)))
-        print("ahhh")
         return  (703.0 * getHealthForDay().weight!) / pow(getHeight() / 2.54, 2)
         
         

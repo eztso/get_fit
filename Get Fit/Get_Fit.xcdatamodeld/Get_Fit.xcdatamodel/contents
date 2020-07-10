@@ -9,10 +9,11 @@
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="height" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="pic" optional="YES" attributeType="Binary"/>
         <attribute name="user" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="HistoryEntity" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="ProfileEntity" positionX="-63" positionY="0" width="128" height="118"/>
+        <element name="ProfileEntity" positionX="-63" positionY="0" width="128" height="133"/>
     </elements>
 </model>
