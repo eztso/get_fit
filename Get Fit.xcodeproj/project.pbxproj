@@ -10,6 +10,7 @@
 		16CF8DF4B24D485A124AC9CE /* Pods_Get_Fit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF496DD02BF99AEC9B8452F /* Pods_Get_Fit.framework */; };
 		4C2E6D2F24B551130006536A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E6D2E24B551130006536A /* SettingsViewController.swift */; };
 		4C2E6D3324B5712F0006536A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E6D3224B5712F0006536A /* ProfileViewController.swift */; };
+		4C4B220824B81CBD008884F5 /* PastDayReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B220724B81CBD008884F5 /* PastDayReviewViewController.swift */; };
 		4C67284924B6A2B400F73DD3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C67284824B6A2B400F73DD3 /* GoogleService-Info.plist */; };
 		4C6964E524B7FCFE006D82E8 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6964E424B7FCFE006D82E8 /* ImagePickerManager.swift */; };
 		4CCB449324B69771009CFD49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB449224B69771009CFD49 /* LoginViewController.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		4C2E6D2E24B551130006536A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4C2E6D3224B5712F0006536A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4C4B220724B81CBD008884F5 /* PastDayReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastDayReviewViewController.swift; sourceTree = "<group>"; };
 		4C67284824B6A2B400F73DD3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C6964E324B7774D006D82E8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4C6964E424B7FCFE006D82E8 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				F15F33FF24B67A2000C8EE48 /* Health.swift */,
 				4CCB449224B69771009CFD49 /* LoginViewController.swift */,
 				4C6964E424B7FCFE006D82E8 /* ImagePickerManager.swift */,
+				4C4B220724B81CBD008884F5 /* PastDayReviewViewController.swift */,
 			);
 			path = "Get Fit";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				F17B307124A7E9D80043F9AE /* ViewController.swift in Sources */,
 				F1E1C48E24B762AD003B51AA /* Challenge.swift in Sources */,
 				F1659E5724B2DF0F00E4C2A5 /* ActivityVC.swift in Sources */,
+				4C4B220824B81CBD008884F5 /* PastDayReviewViewController.swift in Sources */,
 				F1E1C49024B7AE94003B51AA /* DayViewController.swift in Sources */,
 				F15F340424B71B4900C8EE48 /* CalenderVC.swift in Sources */,
 				4C2E6D3324B5712F0006536A /* ProfileViewController.swift in Sources */,
