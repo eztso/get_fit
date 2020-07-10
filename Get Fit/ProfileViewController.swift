@@ -72,7 +72,7 @@ class ProfileViewController: UIViewController {
                 dobLabel.text = data.value(forKey: "dob") as? String
                 heightLabel.text = data.value(forKey: "height") as? String
                 emailLabel.text = data.value(forKey: "email") as? String
-                var storedImageData = data.value(forKey: "pic")
+                let storedImageData = data.value(forKey: "pic")
                 if storedImageData != nil {
                     profilePicImageView.image = UIImage(data: storedImageData as! Data)
                 }
@@ -201,6 +201,7 @@ class ProfileViewController: UIViewController {
         
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Date of Birth"
+            textField.keyboardType = .numberPad
         }
 
         alertController.addAction(saveAction)
@@ -221,6 +222,7 @@ class ProfileViewController: UIViewController {
         
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Height"
+            textField.keyboardType = .numberPad
         }
 
         alertController.addAction(saveAction)
