@@ -18,6 +18,12 @@
             return data[sortedMonths[section]]!.count
         }
         
+        func formatUIView(view: UIView) {
+            view.layer.cornerRadius = 10.0
+            view.layer.masksToBounds = true
+            view.layer.borderColor = UIColor.white.cgColor
+        }
+        
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! histCell
             if indexPath.section < sortedMonths.count {
@@ -25,12 +31,13 @@
                     let d = data[sortedMonths[indexPath.section]]![indexPath.row]
                     cell.date.text? = d.date!
                 }
-                
             }
-            
+            formatUIView(view: cell)
+            cell.date.backgroundColor = UIColor.clear
+            formatUIView(view: cell.date)
             return cell
-            
         }
+        
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: SectionHeaderHeight))
             view.backgroundColor = UIColor(red: 253.0/255.0, green: 240.0/255.0, blue: 196.0/255.0, alpha: 1)
@@ -40,9 +47,12 @@
             if section < sortedMonths.count {
                 label.text = sortedMonths[section]
             }
+            formatUIView(view: label)
+            label.backgroundColor = UIColor.clear
             view.addSubview(label)
             return view
         }
+        
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             // If we wanted to always show a section header regardless of whether or not there were rows in it,
             // then uncomment this line below:
@@ -87,7 +97,6 @@
                 data[k]!.sort( by: { (first: Health, second: Health) -> Bool in
                     first.date! < second.date!
                 })
-                
             }
             
             sortedMonths = Array(data.keys).sorted(by: { (k1, k2) -> Bool in
@@ -103,10 +112,7 @@
                 df.dateFormat = "yyyy-MM-dd"
                 let d = df.date(from: data[sortedMonths[section]]![row].date!)
                 destination.date = d
-
                 destination.health = data[sortedMonths[section]]![row]
-                
-                
             }
         }
     }
