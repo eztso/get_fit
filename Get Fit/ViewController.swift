@@ -38,6 +38,9 @@ class ViewController: UIViewController, Updater {
     @IBOutlet weak var challengeLabel: UILabel!
     
     @IBOutlet weak var challengeOutlet: UIButton!
+    @IBOutlet weak var challengeViewOutlet: UIView!
+    @IBOutlet weak var challengeImageView: UIImageView!
+    
     @IBAction func onChallengeButtonPressed(_ sender: Any) {
         Constant.healthdata.setTodaysChallenge(ch: challenge!.idx)
         challengeOutlet.isHidden = true
@@ -136,6 +139,7 @@ class ViewController: UIViewController, Updater {
         formatUIView(view: weightButton)
         formatUIView(view: foodButton)
         formatUIView(view: activityButton)
+        formatUIView(view: challengeViewOutlet)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -162,9 +166,8 @@ class ViewController: UIViewController, Updater {
         }
         else if Constant.healthdata.getHealthForDay().curChallenge == -2 {
             challengeOutlet.isHidden = true
-            challengeLabel.text = "completed todays challenge"
-            
-            
+            challengeLabel.text = "Challenges complete"
+            challengeImageView.image = UIImage(systemName: "checkmark.seal")
         }
         else {
             challengeOutlet.isHidden = true
@@ -172,11 +175,13 @@ class ViewController: UIViewController, Updater {
             challengeLabel.text = challenge!.descriptions[challenge!.idx]
             if (challenge!.checkCompletion()) {
                 challenge!.idx = -2
-                challengeLabel.text! = "completed todays challenge"
+                challengeLabel.text! = "Challenges complete"
                 Constant.healthdata.addPoints()
+                challengeImageView.image = UIImage(systemName: "checkmark.seal")
                 
             }
         }
+        challengeLabel.numberOfLines = 0
             
         overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
       

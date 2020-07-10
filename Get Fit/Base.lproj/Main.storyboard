@@ -116,7 +116,7 @@
                                         <color key="textColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QIE-jn-bXd">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xmark.seal" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QIE-jn-bXd">
                                         <rect key="frame" x="30" y="57.5" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,8 +143,10 @@
                     <connections>
                         <outlet property="activityButton" destination="MCF-Zz-fFz" id="pwY-Ba-USg"/>
                         <outlet property="cardView" destination="hb3-jx-cOE" id="anx-Vm-UKn"/>
+                        <outlet property="challengeImageView" destination="QIE-jn-bXd" id="k7S-4t-mwY"/>
                         <outlet property="challengeLabel" destination="IfO-Ji-Bqw" id="nCL-tT-aAk"/>
                         <outlet property="challengeOutlet" destination="4rh-Qe-DM9" id="7ur-Mz-P1A"/>
+                        <outlet property="challengeViewOutlet" destination="Fm0-Ld-KXV" id="M9Q-ZA-yfP"/>
                         <outlet property="foodButton" destination="G61-mR-qye" id="Efw-n2-bac"/>
                         <outlet property="weightButton" destination="WpD-Ac-oXG" id="3Pf-z3-DGC"/>
                     </connections>
@@ -799,11 +801,11 @@
         <image name="arrow.down.circle" catalog="system" width="128" height="121"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="camera" catalog="system" width="128" height="96"/>
-        <image name="checkmark.seal.fill" catalog="system" width="128" height="122"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="noprof" width="720" height="720"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="xmark.seal" catalog="system" width="128" height="122"/>
     </resources>
 </document>
