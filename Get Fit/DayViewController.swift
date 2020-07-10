@@ -21,10 +21,11 @@ class DayViewController: UIViewController {
     }
     var stepsData : [Double] = []
     var date : Date?
+    var health : Health?
     var dispatch = DispatchGroup()
     
     var linechartView = Charts.LineChartView()
-    
+    var radarChartView = Charts.RadarChartView()
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.getLineChartData()
@@ -45,12 +46,81 @@ class DayViewController: UIViewController {
         xAxis.xOffset = 10
         xAxis.labelFont = .systemFont(ofSize: 9, weight: .bold)
         xAxis.valueFormatter = XAxisFormatterLinePlot()
-       
+        
         
         let data = LineChartData()
         data.addDataSet(line1)
         linechartView.data = data
         linechartView.chartDescription?.text = "Step Count(24 hr)"
+        
+        var entries2 = [ChartDataEntry]()
+        let temp : [Double] = [health!.foodFat!, health!.foodProtein!, health!.foodSugar!]
+        for i in 0..<temp.count  {
+            let y_ = temp[i]
+            print(i)
+            let value = ChartDataEntry(x: Double(i), y : y_)
+            entries2.append(value)
+        }
+        
+        
+        
+        let radar1data = RadarChartDataSet(entries: entries2, label: "Diet")
+        radar1data.colors = [Constant.red]
+        radar1data.fillColor = Constant.red_trans
+        radar1data.drawFilledEnabled = true
+        radar1data.lineWidth = 2
+        radar1data.valueFormatter = DataSetValueFormatter()
+        var entries3 = [ChartDataEntry]()
+
+        let temp2 : [Double] = [83.0, 63.0, 40.0]
+            for i in 0..<temp.count  {
+                let y_ = temp2[i]
+                print(i)
+                let value = ChartDataEntry(x: Double(i), y : y_)
+                entries3.append(value)
+            }
+        let radar2data = RadarChartDataSet(entries: entries3, label: "Diet")
+               radar2data.colors = [Constant.green]
+               radar2data.fillColor = Constant.green_trans
+               radar2data.drawFilledEnabled = true
+               radar2data.lineWidth = 2
+               radar2data.valueFormatter = DataSetValueFormatter()
+        
+        
+        let r_xAxis = radarChartView.xAxis
+        r_xAxis.labelFont = .systemFont(ofSize: 9, weight: .bold)
+        r_xAxis.labelFont = .systemFont(ofSize: 9, weight: .bold)
+        r_xAxis.labelTextColor = .black
+        r_xAxis.xOffset = 10
+        r_xAxis.yOffset = 10
+        r_xAxis.valueFormatter = XAxisFormatter()
+        
+        
+        let r_data = RadarChartData()
+        r_data.addDataSet(radar1data)
+        r_data.addDataSet(radar2data)
+        
+        radarChartView.data = r_data
+        radarChartView.chartDescription?.text = "Diet"
+        radarChartView.webLineWidth = 1.5
+        radarChartView.innerWebLineWidth = 1.5
+        radarChartView.webColor = .lightGray
+        radarChartView.innerWebColor = .lightGray
+        
+        // 3
+        
+        
+        // 4
+        let yAxis = radarChartView.yAxis
+        yAxis.labelFont = .systemFont(ofSize: 9, weight: .light)
+        yAxis.labelCount = 6
+        yAxis.drawTopYLabelEntryEnabled = false
+        yAxis.axisMinimum = 0
+        yAxis.valueFormatter = YAxisFormatter()
+        
+        // 5
+        radarChartView.rotationEnabled = false
+        radarChartView.legend.enabled = false
         
         
         testScrollview()
@@ -58,17 +128,28 @@ class DayViewController: UIViewController {
     
     
     func testScrollview() {
-      
+        
         contentView.addSubview(linechartView)
+        contentView.addSubview(radarChartView)
         linechartView.translatesAutoresizingMaskIntoConstraints = false
         linechartView.translatesAutoresizingMaskIntoConstraints = false
         
         linechartView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         linechartView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        linechartView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        linechartView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
         linechartView.heightAnchor.constraint(equalToConstant: 400).isActive = true
-//        linechartView.bottomAnchor.constraint(equalTo: imageView2.topAnchor).isActive = true
-    
+        radarChartView.translatesAutoresizingMaskIntoConstraints = false
+        radarChartView.translatesAutoresizingMaskIntoConstraints = false
+        
+        radarChartView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        radarChartView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        radarChartView.topAnchor.constraint(equalTo: linechartView.bottomAnchor, constant: 5).isActive = true
+        radarChartView.topAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        radarChartView.heightAnchor.constraint(equalToConstant: 400).isActive = true
+        
+        
+        //        linechartView.bottomAnchor.constraint(equalTo: imageView2.topAnchor).isActive = true
+        
         
         self.contentView.setNeedsLayout()
     }
@@ -93,13 +174,9 @@ class DayViewController: UIViewController {
         
     }
     
-    class XAxisFormatterLinePlot: IAxisValueFormatter {
-               
-               
-               func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-                   String(Int(value))
-               }
-           }
+    
+    
+    
     /*
      // MARK: - Navigation
      
@@ -110,4 +187,38 @@ class DayViewController: UIViewController {
      }
      */
     
+}
+class XAxisFormatterLinePlot: IAxisValueFormatter {
+    
+    
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        String(Int(value))
+    }
+}
+class DataSetValueFormatter: IValueFormatter {
+    
+    func stringForValue(_ value: Double,
+                        entry: ChartDataEntry,
+                        dataSetIndex: Int,
+                        viewPortHandler: ViewPortHandler?) -> String {
+        ""
+    }
+}
+
+// 2
+class XAxisFormatter: IAxisValueFormatter {
+    
+    let titles = ["Fat" , "Protein","Sugar"]
+    
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        titles[Int(value) % titles.count]
+    }
+}
+
+// 3
+class YAxisFormatter: IAxisValueFormatter {
+    
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        "\(Int(value)) $"
+    }
 }

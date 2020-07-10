@@ -118,8 +118,11 @@
                 let df = DateFormatter()
                 df.dateFormat = "yyyy-MM-dd"
                 let d = df.date(from: data[sortedMonths[section]]![row].date!)
-                
                 destination.date = d
+
+                destination.health = data[sortedMonths[section]]![row]
+                
+                
             }
         }
     }

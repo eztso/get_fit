@@ -146,6 +146,7 @@
                         <outlet property="challengeImageView" destination="QIE-jn-bXd" id="k7S-4t-mwY"/>
                         <outlet property="challengeLabel" destination="IfO-Ji-Bqw" id="nCL-tT-aAk"/>
                         <outlet property="challengeOutlet" destination="4rh-Qe-DM9" id="7ur-Mz-P1A"/>
+                        <outlet property="challengeTitleLabel" destination="sTe-8B-EXP" id="dHH-d3-Gd1"/>
                         <outlet property="challengeViewOutlet" destination="Fm0-Ld-KXV" id="M9Q-ZA-yfP"/>
                         <outlet property="foodButton" destination="G61-mR-qye" id="Efw-n2-bac"/>
                         <outlet property="weightButton" destination="WpD-Ac-oXG" id="3Pf-z3-DGC"/>
@@ -211,7 +212,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aiC-zy-ZSz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="85" id="BTP-iw-wKU" customClass="histCell" customModule="Get_Fit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="85"/>
@@ -237,7 +238,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aiC-zy-ZSz" firstAttribute="top" secondItem="jXv-nn-Mbf" secondAttribute="top" id="CDe-5Y-z3e"/>
                             <constraint firstItem="aiC-zy-ZSz" firstAttribute="leading" secondItem="jXv-nn-Mbf" secondAttribute="leading" id="CN6-CV-Sg7"/>
@@ -268,7 +269,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ec-4h-Ort">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -283,7 +284,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="N81-Kv-vgI"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RIP-1f-3gj" firstAttribute="leading" secondItem="g67-f0-1bw" secondAttribute="leading" id="16h-7q-WEa"/>
                             <constraint firstItem="RIP-1f-3gj" firstAttribute="bottom" secondItem="g67-f0-1bw" secondAttribute="bottom" id="d9W-8v-dR9"/>
@@ -527,7 +528,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaQ-vn-2MO">
                                 <rect key="frame" x="176" y="700" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign-Out"/>
+                                <state key="normal" title="Sign-Out">
+                                    <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="signOutButtonPressed:" destination="7N5-km-zSR" eventType="touchUpInside" id="Zef-dg-a9F"/>
                                 </connections>
@@ -551,7 +554,7 @@
                         <outlet property="nameLabel" destination="Vke-xB-5rI" id="2fn-uo-xhI"/>
                         <outlet property="nameView" destination="Mlp-Co-UJ2" id="qrc-2k-0TJ"/>
                         <outlet property="profilePicImageView" destination="QIe-V6-Xli" id="rI3-t9-pPK"/>
-                        <segue destination="zJG-BC-Kcg" kind="show" identifier="SignOutSegueIdentifier" id="55L-sy-3LM"/>
+                        <segue destination="zJG-BC-Kcg" kind="presentation" identifier="SignOutSegueIdentifier" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="55L-sy-3LM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JnK-79-I1x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -659,7 +662,7 @@
             <objects>
                 <viewController id="zJG-BC-Kcg" customClass="LoginViewController" customModule="Get_Fit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oJT-jd-nIj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VI4-iq-dvq">
@@ -677,7 +680,9 @@
                                 <rect key="frame" x="140" y="447" width="136" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <state key="normal" title="Guest Login"/>
+                                <state key="normal" title="Guest Login">
+                                    <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="skipLoginButtonPressed:" destination="zJG-BC-Kcg" eventType="touchUpInside" id="te7-5W-a5P"/>
                                 </connections>
@@ -732,7 +737,9 @@
                                 <rect key="frame" x="140" y="409" width="136" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <state key="normal" title="Sign In"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="0.96078431369999995" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="signInButtonPressed:" destination="zJG-BC-Kcg" eventType="touchUpInside" id="EId-uD-14G"/>
                                 </connections>

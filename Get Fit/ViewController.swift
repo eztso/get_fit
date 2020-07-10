@@ -41,6 +41,7 @@ class ViewController: UIViewController, Updater {
     @IBOutlet weak var challengeViewOutlet: UIView!
     @IBOutlet weak var challengeImageView: UIImageView!
     
+    @IBOutlet weak var challengeTitleLabel: UILabel!
     @IBAction func onChallengeButtonPressed(_ sender: Any) {
         Constant.healthdata.setTodaysChallenge(ch: challenge!.idx)
         challengeOutlet.isHidden = true
@@ -66,6 +67,7 @@ class ViewController: UIViewController, Updater {
         
         self.present(alertController, animated: true, completion: nil)
     }
+    
     
     func sendNotifications(hour: Int) {
         // create an object that holds the data for our notification
@@ -168,6 +170,10 @@ class ViewController: UIViewController, Updater {
             challengeOutlet.isHidden = true
             challengeLabel.text = "Challenges complete"
             challengeImageView.image = UIImage(systemName: "checkmark.seal")
+            challengeImageView.tintColor = Constant.green
+            challengeTitleLabel.textColor = Constant.green
+            challengeLabel.textColor = Constant.green
+            
         }
         else {
             challengeOutlet.isHidden = true
@@ -178,6 +184,9 @@ class ViewController: UIViewController, Updater {
                 challengeLabel.text! = "Challenges complete"
                 Constant.healthdata.addPoints()
                 challengeImageView.image = UIImage(systemName: "checkmark.seal")
+                challengeImageView.tintColor = Constant.green
+                challengeTitleLabel.textColor = Constant.green
+                challengeLabel.textColor = Constant.green
                 
             }
         }
