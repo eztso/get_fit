@@ -26,6 +26,7 @@ class DayViewController: UIViewController {
     
     var linechartView = Charts.LineChartView()
     var radarChartView = Charts.RadarChartView()
+    var button = UIButton()
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.getLineChartData()
@@ -45,7 +46,7 @@ class DayViewController: UIViewController {
         var entries_b = [ChartDataEntry]()
         entries_b.append(ChartDataEntry(x: 0.0, y : Double(Constant.recSteps)))
         entries_b.append(ChartDataEntry(x: 23.0, y : Double(Constant.recSteps)))
-
+        
         let line2 = LineChartDataSet(entries: entries_b, label: "Recommended")
         line2.colors = [Constant.green]
         
@@ -158,15 +159,31 @@ class DayViewController: UIViewController {
         
         radarChartView.heightAnchor.constraint(equalToConstant: 400).isActive = true
         radarChartView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        let view = UIView()
+        view.backgroundColor = .white
         
+        // Create UIButton
+        let myButton = UIButton(type: .system)
         
+        // Position Button
+        myButton.frame = CGRect(x: 20, y: 20, width: 100, height: 50)
+        // Set text on button
+        myButton.setTitle("Metrics", for: .normal)
+        
+        // Set button action
+        myButton.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
+        scrollView.addSubview(myButton
+        )
         
         //        linechartView.bottomAnchor.constraint(equalTo: imageView2.topAnchor).isActive = true
-        
         
         self.contentView.setNeedsLayout()
     }
     
+    @objc func buttonAction(_ sender:UIButton!)
+    {
+        print("Button tapped")
+    }
     func getLineChartData() {
         self.stepsData = []
         var s1 = Calendar.current.startOfDay(for: date!)
