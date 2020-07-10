@@ -59,6 +59,7 @@ class ViewController: UIViewController, Updater {
             (action : UIAlertAction!) -> Void in })
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter Weight"
+            textField.keyboardType = .numberPad
         }
         
         alertController.addAction(saveAction)
@@ -183,7 +184,7 @@ class ViewController: UIViewController, Updater {
         }
         challengeLabel.numberOfLines = 0
             
-        overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
+        overrideUserInterfaceStyle =  UserDefaults.standard.bool(forKey: "darkModeOn") ? .dark : .light
       
         var t = ""
         if Constant.healthdata.getHealthForDay().weight == 0  {
