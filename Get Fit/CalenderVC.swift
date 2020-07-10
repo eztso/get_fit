@@ -119,7 +119,6 @@
                 
                 destination.date = d
             }
-            
         }
     }
     
